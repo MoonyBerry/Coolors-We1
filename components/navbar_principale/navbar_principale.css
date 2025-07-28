@@ -1,0 +1,92 @@
+.nav-container {
+  border-bottom: solid #ececec 2px;
+  display: flex;
+  justify-content: space-between;
+  height: 6.7vh;
+  align-items: center;
+}
+.nav-container img {
+  margin-left: 13px;
+}
+.nav-options {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  font-weight: 500;
+}
+.nav-options a {
+  text-decoration: none;
+  list-style: none;
+  color: #000000;
+}
+.btn-tools :hover {
+  color: #0066ff;
+}
+.log-in a:hover {
+  color: #0066ff;
+}
+.btn-register {
+  display: flex;
+  width: 90px;
+  height: 35px;
+  background: #0066ff;
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  transition: background-color 0.1s ease-in-out;
+  margin-right: 13px;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-register:hover {
+  background-color: #005ce6;
+}
+.btn-register a {
+  color: white;
+}
+
+.btn-pro a {
+  color: #ff0096;
+}
+/* text "passa a pro" rainbow animation */
+.btn-pro :hover {
+  background-image: linear-gradient(
+    90deg,
+    red,
+    orange,
+    yellow,
+    green,
+    blue,
+    indigo,
+    violet
+  );
+  background-size: 300%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: rainbow-text 2s linear infinite;
+}
+@keyframes rainbow-text {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+/*  */
+.btn-tool > i {
+  font-weight: 900;
+  font-size: 14px;
+  color: #000000;
+}
+.spanider {
+  display: inline-block;
+  width: 2px;
+  height: 35px;
+  background-color: #ececec;
+  margin: 0 10px;
+}
