@@ -1,0 +1,50 @@
+/*SPONSORS SECTION GENERAL RULES*/
+section.sponsors-section {
+  width: 100%;
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/*STYLING ELEMENTS' SECTION*/
+div.sponsors-intro {
+  font-size: 20px;
+  font-weight: 480;
+  text-align: center;
+  width: 100%;
+  height: auto;
+}
+
+ul.sponsors-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 1%;
+  margin-top: 50px;
+}
+
+ul.sponsors-icons li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: auto;
+}
+
+ul.sponsors-icons img {
+  margin: 10px;
+  transition: transform 0.1s;
+}
+
+/*ICONSS EFFECT ON HOVER*/
+ul.sponsors-icons img:hover {
+  transform: scale(120%);
+}
+
+body {
+  height: 1200vh;
+}
