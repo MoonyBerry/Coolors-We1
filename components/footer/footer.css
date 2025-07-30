@@ -1,0 +1,141 @@
+/*FOOTER GENERAL RULES*/
+section.home-footer {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #f7f7f8;
+  padding: 40px 1% 10px;
+}
+
+/*STYLING LINK SECTION*/
+div.footer-main-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: start;
+  justify-content: start;
+  gap: 9%;
+  width: 100%;
+}
+
+div.footer-list {
+  padding: 24px;
+  margin-bottom: 10px;
+}
+
+div.footer-list h3 {
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 30px;
+}
+
+div.footer-list li {
+  padding: 10px 0;
+  font-size: 16.5px;
+  font-weight: 500;
+}
+
+div.footer-list a {
+  text-decoration: none;
+  color: black;
+  transition: color 0.1s ease-in-out 0s;
+}
+
+/*HOVER EFFECT ON LINK*/
+div.footer-list a:hover {
+  color: #0066ff;
+}
+
+/*CREATING A DIVIDER*/
+div.footer-divider {
+  background-color: #e5e5e6;
+  width: 95%;
+  height: 1px;
+  margin-bottom: 10px;
+}
+
+/*STYLING FOOTER COPYRIGHT SECTION*/
+div.footer-copyright {
+  width: 99%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px;
+}
+
+div.footer-copyright p {
+  width: 50%;
+  font-size: 13px;
+  color: #636369;
+}
+
+div.footer-copyright a {
+  color: black;
+  text-decoration: none;
+  font-size: 14.3px;
+  font-weight: 600;
+  transition: color 0.1s ease-in-out 0s;
+}
+
+div.footer-copyright a:hover {
+  text-decoration: underline;
+  color: #0066ff;
+}
+
+/*SECTION WITH BUTTON AND SOCIAL ICONS*/
+div.footer-interactive {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 26%;
+}
+
+/*BUTTON*/
+button.language-button {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 130px;
+  height: 36px;
+  border: 1px solid lightgray;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: #f7f7f8;
+}
+
+button.language-button img {
+  width: 18px;
+  height: 20px;
+}
+
+button.language-button p {
+  font-size: 15px;
+  color: black;
+}
+
+button.language-button svg {
+  width: 15px;
+  height: 18px;
+  margin-left: 7px;
+}
+
+/*SOCIAL ICONS*/
+div.social-icons {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 60%;
+}
+
+div.social-icons svg {
+  width: 20px;
+  height: 20px;
+  transition: fill 0.1s ease-in-out 0s;
+}
+
+div.social-icons svg:hover {
+  fill: #0066ff;
+}
