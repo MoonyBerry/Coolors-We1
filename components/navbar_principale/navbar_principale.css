@@ -1,16 +1,19 @@
 .nav-container {
-  border-bottom: solid #ececec 2px;
+  border-bottom: solid #ececec 1px;
   display: flex;
   justify-content: space-between;
-  height: 6.7vh;
+  height: 60px;
   align-items: center;
 }
 .nav-container img {
-  margin-left: 13px;
+  margin-left: 20px;
+  width: 110px;
+  height: 18px;
 }
 .nav-options {
   display: flex;
   gap: 1rem;
+  font-size: 15px;
   align-items: center;
   font-weight: 500;
 }
@@ -32,11 +35,11 @@
   background: #0066ff;
   color: white;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 15px;
   border: none;
   border-radius: 8px;
   transition: background-color 0.1s ease-in-out;
-  margin-right: 13px;
+  margin-right: 20px;
   align-items: center;
   justify-content: center;
 }
@@ -85,8 +88,12 @@
 }
 .spanider {
   display: inline-block;
-  width: 2px;
+  width: 1px;
   height: 35px;
   background-color: #ececec;
   margin: 0 10px;
+}
+
+.fa-chevron-down {
+  margin-left: 8px;
 }
