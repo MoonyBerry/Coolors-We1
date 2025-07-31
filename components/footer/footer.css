@@ -1,5 +1,5 @@
 /*FOOTER GENERAL RULES*/
-section.home-footer {
+footer.home-footer {
   width: 100%;
   height: auto;
   display: flex;
@@ -7,7 +7,7 @@ section.home-footer {
   align-items: center;
   justify-content: center;
   background: #f7f7f8;
-  padding: 40px 1% 10px;
+  padding: 30px 2% 10px;
 }
 
 /*STYLING LINK SECTION*/
@@ -70,6 +70,7 @@ div.footer-copyright p {
   width: 50%;
   font-size: 13px;
   color: #636369;
+  font-weight: 500;
 }
 
 div.footer-copyright a {
