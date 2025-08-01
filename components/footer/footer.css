@@ -140,3 +140,34 @@ div.social-icons svg {
 div.social-icons svg:hover {
   fill: #0066ff;
 }
+
+@media screen and (max-width: 768px) {
+  div.footer-main-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  div.footer-list {
+    text-align: center;
+  }
+
+  div.footer-copyright {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  div.footer-copyright p {
+    text-align: center;
+    width: 80%;
+    line-height: 1.3rem;
+  }
+
+  div.footer-interactive {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+  }
+}
