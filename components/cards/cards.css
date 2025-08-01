@@ -58,6 +58,7 @@ h2.card-title {
 p.card-description {
   text-align: center;
   font-size: 16px;
+  font-weight: 450;
   color: #464853;
   line-height: 1.7rem;
 }
@@ -120,4 +121,20 @@ div.yellow::after {
   content: "Download";
   color: #daab00;
   background-color: #fdf3ce;
+}
+
+@media screen and (max-width: 768px) {
+  div.cards-container {
+    flex-direction: column;
+    padding: 0 20px;
+  }
+
+  div.card {
+    width: 100%;
+    padding: 3%;
+  }
+
+  a.card-link {
+    padding: 0;
+  }
 }
