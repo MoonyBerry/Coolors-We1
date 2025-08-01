@@ -273,7 +273,7 @@ h1 {
 .mobileMenu div {
   font-size: 18px;
 }
-.fa-bars {
+i.fa-bars {
   display: none;
   position: absolute;
   left: 0;
@@ -295,8 +295,11 @@ h1 {
   .nav-container {
     justify-content: center;
   }
-  .fa-bars {
+  i.fa-bars {
     display: block;
+  }
+  .nav-container img {
+    margin-left: 0;
   }
 }
 
