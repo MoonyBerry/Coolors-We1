@@ -54,7 +54,7 @@ ul.sponsors-icons img:hover {
 
 @media screen and (max-width: 768px) {
   section.sponsors-section {
-    margin-top: 20%;
+    margin-top: 15%;
   }
 
   ul.sponsors-icons img {
