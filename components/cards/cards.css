@@ -2,8 +2,8 @@
 div.cards-container {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-evenly;
+  align-items: stretch;
+  justify-content: center;
   width: 100%;
   gap: 24px;
   padding: 0 40px;
@@ -14,8 +14,12 @@ div.card {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-grow: 1;
-  flex-shrink: 1;
+  flex: 1 1 220px;
+  min-width: 0;
+  /* min-height: 340px; */
+  flex-grow: 1; /* 
+  flex-shrink: 1; */
+  flex-basis: 220px;
   border-radius: 14px;
   background: #f7f7f8;
   position: relative;
@@ -25,14 +29,12 @@ div.card {
 a.card-link {
   display: flex;
   flex-direction: column;
-  flex-basis: 340px;
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  width: 220px;
-  min-width: 200px;
-  height: 310px;
-  min-height: 300px;
+  width: 100%;
+  min-width: 0;
+  height: auto;
   padding: 15%;
 }
 
@@ -127,11 +129,13 @@ div.yellow::after {
   div.cards-container {
     flex-direction: column;
     padding: 0 20px;
+    gap: 15px;
   }
 
   div.card {
     width: 100%;
     padding: 3%;
+    min-height: 300px;
   }
 
   a.card-link {

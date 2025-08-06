@@ -1,3 +1,17 @@
+div.adobe-modal,
+div.adobe-overlay {
+  opacity: 0; /* INIZIA NASCOSTO */
+  visibility: hidden; /* INIZIA NASCOSTO */
+  transition: opacity 0.3s ease-in-out; /* ANIMAZIONE */
+}
+
+/* quando si aggiunge la classe show */
+div.adobe-modal.show,
+div.adobe-overlay.show {
+  opacity: 1; /* DIVENTA VISIBILE */
+  visibility: visible; /* DIVENTA VISIBILE */
+}
+
 /*MODAL GENERAL RULES*/
 div.adobe-modal {
   background: white;
@@ -23,6 +37,7 @@ div.close-adobe-modal {
 div.close-adobe-modal svg {
   width: 18px;
   height: 18px;
+  cursor: pointer;
 }
 
 /*CLOSE EFFECT ON HOVER*/
@@ -117,7 +132,7 @@ a.adobe-soon {
 div.adobe-overlay {
   width: 100%;
   height: 100%;
-  background: rgba(93, 93, 93, 0.5);
+  background: rgba(72, 72, 72, 0.5);
   position: fixed;
   top: 0;
   left: 0;
