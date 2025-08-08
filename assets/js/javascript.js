@@ -4,3 +4,4 @@
 
 import "../../components/cards/cards.js";
 import "../../components/footer/footer.js";
+import "../../components/home-main/main.js";
