@@ -7,6 +7,7 @@ div.home-main-container {
   padding: 25px 0px 0;
   margin-bottom: 7%;
   margin-top: 3%;
+  max-width: 1700px;
 }
 
 /*STYLING TITLE'S AND BUTTONS' CONTAINER*/
@@ -77,24 +78,95 @@ button.intro-palette:hover {
 }
 
 div.home-animated-screens {
-  width: 60%;
+  width: 75%;
+  height: 600px;
+}
+
+div.pc-svg-screens {
+  position: relative;
+  width: 100%;
   height: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+#animated-screens-svg {
+  position: absolute;
+  top: 8%;
+  left: 10%;
+  width: 100%;
+  height: 500px;
+  transform: scale(1.21);
+  overflow: hidden;
 }
 
 div.mobile-svg-screen {
   display: none;
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (min-width: 1700px) {
+  div.home-intro {
+    width: 50%;
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+
+  div.home-animated-screens {
+    width: 70%;
+  }
+
+  #animated-screens-svg {
+    top: 13%;
+    left: 0;
+    width: 100%;
+    transform: scale(1.1);
+    overflow-x: visible;
+  }
+}
+
+@media screen and (max-width: 1335px) {
+  div.home-intro {
+    width: 50%;
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+
+  div.home-animated-screens {
+    width: 50%;
+  }
+
+  #animated-screens-svg {
+    top: 10%;
+    left: 35%;
+    width: 100%;
+    transform: scale(1.6);
+  }
+}
+
+@media screen and (max-width: 1200px) {
   h1.intro-title {
     font-size: 50px;
     line-height: 3.5rem;
   }
+}
 
+@media screen and (max-width: 992px) {
   div.home-intro {
-    width: 60%;
+    width: 70%;
     padding-left: 3%;
     padding-right: 3%;
+  }
+
+  div.home-animated-screens {
+    width: 60%;
+  }
+
+  #animated-screens-svg {
+    top: 13%;
+    left: 55%;
+    width: 100%;
+    transform: scale(2.1);
   }
 }
 
@@ -127,6 +199,10 @@ div.mobile-svg-screen {
     align-items: center;
     justify-content: center;
     margin-bottom: 10%;
+  }
+
+  div.pc-svg-screens {
+    display: none;
   }
 
   div.mobile-svg-screen {
