@@ -16,9 +16,7 @@ div.card {
   justify-content: center;
   flex: 1 1 220px;
   min-width: 0;
-  /* min-height: 340px; */
-  flex-grow: 1; /* 
-  flex-shrink: 1; */
+  flex-grow: 1;
   flex-basis: 220px;
   border-radius: 14px;
   background: #f7f7f8;
