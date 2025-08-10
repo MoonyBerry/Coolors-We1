@@ -343,7 +343,7 @@
 </g>
 <path class="st0"  d="M0,0v759h980.6V0H0z M956.6,461.5h-655v-450h655V461.5z"></path>
 <g id="homepage_hero-generate-btn">
-	<g id="homepage_hero-generate-btn-text" class="st319">
+	<g id="homepage_hero-generate-btn-text" class="st319" >
 		
 		<path class="st320" d="M55,182.1c0.1-3.9,0.4-6.6,1-6.6h0.1c0.1,0.1,0.7,0.2,0.8,0.8c0.4,1.8,1.1,4.9,2.5,7
 			c0.2-0.1,1.1-1.7,1.6-2.6l0.1-0.2c0.9-1.6,1.5-2.8,2.1-4.3c0.1-0.3,0.3-0.4,0.7-0.4c0.3,0,0.5,0.1,0.8,0.4
@@ -391,8 +391,8 @@
 		C973.1,12.8,966.3,6,958,6z M963,20.3v433.5c0,2.3-1.9,4.2-4.2,4.2h-660c-2.3,0-4.2-1.9-4.2-4.2V20.3c0-2.3,1.9-4.2,4.2-4.2h660.1
 		C961.1,16.1,963,18,963,20.3z"></path>
 	<path class="st323" d="M532.6,532h193l0,0c0,5.5-4.5,10-10,10h-173C537.1,542,532.6,537.5,532.6,532L532.6,532z"></path>
-	<path class="st324"  d="M963,20.3v433.5c0,2.3-1.9,4.2-4.2,4.2h-660c-2.3,0-4.2-1.9-4.2-4.2V20.3c0-2.3,1.9-4.2,4.2-4.2h660.1
-		C961.1,16.1,963,18,963,20.3z"></path>
+	<path class="st324" d="M963,20.3v433.5c0,2.3-1.9,4.2-4.2,4.2h-660c-2.3,0-4.2-1.9-4.2-4.2V20.3c0-2.3,1.9-4.2,4.2-4.2h660.1
+		C961.1,16.1,963,18,963,20.3z" style="cursor: pointer"></path>
 </g>
 <g id="homepage_hero-explore-btn"  class="">
 	<g id="homepage_hero-explore-btn-text"  class="st319">
@@ -429,8 +429,8 @@
 
 <g id="homepage_hero-generate">
 	<path class="st320" d="M448.5,535.5V267c0.1-7.6-6.1-13.9-13.8-14c0,0,0,0-0.1,0H57.3c-7.7,0.1-13.9,6.3-13.9,13.9c0,0,0,0,0,0.1
-		v268.5H448.5z"></path>
-	<g id="homepage_hero-generator-laptop">
+		v268.5H448.5z" ></path>
+	<g id="homepage_hero-generator-laptop" style="cursor: pointer">
 		<path class="st325" d="M322.5,262.9h112c2.2,0,4,1.8,4,4v255h-116V262.9z" style="fill: rgb(35, 31, 32);"></path>
 		<rect x="247.5" y="262.9" class="st326" width="115" height="259" style="fill: rgb(187, 68, 48);"></rect>
 		<rect x="169.5" y="262.9" class="st327" width="115" height="259" style="fill: rgb(126, 189, 194);"></rect>
