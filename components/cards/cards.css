@@ -15,7 +15,8 @@ div.card {
   align-items: center;
   justify-content: center;
   flex: 1 1 220px;
-  min-width: 0;
+  min-width: 200px;
+  max-width: 280px;
   flex-grow: 1;
   flex-basis: 220px;
   border-radius: 14px;
@@ -121,6 +122,12 @@ div.yellow::after {
   content: "Download";
   color: #daab00;
   background-color: #fdf3ce;
+}
+
+@media screen and (max-width: 1275px) {
+  div.card {
+    max-width: 100%;
+  }
 }
 
 @media screen and (max-width: 768px) {
