@@ -187,6 +187,20 @@ div.social-icons svg:hover {
   fill: #0066ff;
 }
 
+@media screen and (min-width: 1500px) {
+  div.footer-main-section {
+    max-width: 1500px;
+  }
+
+  div.footer-divider {
+    max-width: 1500px;
+  }
+
+  div.footer-copyright {
+    max-width: 1500px;
+  }
+}
+
 @media screen and (max-width: 768px) {
   div.footer-main-section {
     flex-direction: column;
