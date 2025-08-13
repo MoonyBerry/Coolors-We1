@@ -11,13 +11,10 @@
   width: 53%;
   height: 100%;
   display: flex;
-  padding: 0px 0px 0px 7px;
   font-size: 18px;
   align-items: center;
   font-weight: 400;
   color: #7d7c83;
-
-  margin: 10px;
   min-width: 200px;
 }
 .horizontal-navigation-bar {
