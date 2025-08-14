@@ -1,0 +1,149 @@
+/*CARDS' CONTAINER GENERAL RULES*/
+div.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: center;
+  width: 100%;
+  gap: 24px;
+  padding: 0 40px;
+}
+
+/*STYLING CARD*/
+div.card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 220px;
+  min-width: 200px;
+  max-width: 280px;
+  flex-grow: 1;
+  flex-basis: 220px;
+  border-radius: 14px;
+  background: #f7f7f8;
+  position: relative;
+  overflow: hidden; /*for hiding transition on hover*/
+}
+
+a.card-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  width: 100%;
+  min-width: 0;
+  height: auto;
+  padding: 15%;
+}
+
+/*STYLING CARD'S ELEMENTS*/
+img.card-logo {
+  width: 60px;
+  height: auto;
+  margin-bottom: 25px;
+}
+
+img.second-style {
+  width: 55px;
+}
+
+h2.card-title {
+  text-align: center;
+  font-weight: 800;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #000000;
+}
+
+p.card-description {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 450;
+  color: #464853;
+  line-height: 1.7rem;
+}
+
+/*AFTER EFFECT ON CARD*/
+div.card::after {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  font-weight: 800;
+  text-align: center;
+  line-height: 2.5rem;
+  white-space: pre-line;
+  position: absolute;
+  border-radius: 14px;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  pointer-events: none;
+}
+
+div.card:hover::after {
+  opacity: 1;
+  transform: translateY(0%);
+}
+
+/*CYAN CARD*/
+div.cyan::after {
+  content: "Visualizza\A su App\A Store";
+  color: #00aee5;
+  background-color: #d8f6ff;
+}
+
+/*GREEN CARD*/
+div.green::after {
+  content: "Visualizza\A su Play\A Store";
+  color: #14b789;
+  background-color: #d5f8ef;
+}
+
+/*PINK CARD*/
+div.pink::after {
+  content: "Installa\A ora";
+  color: #ff0096;
+  background-color: #ffe5f4;
+}
+
+/*VIOLET CARD*/
+div.violet::after {
+  content: "Aggiungi\A a Chrome";
+  color: #802fde;
+  background-color: #e8e2f7;
+}
+
+/*YELLOW CARD*/
+div.yellow::after {
+  content: "Download";
+  color: #daab00;
+  background-color: #fdf3ce;
+}
+
+@media screen and (max-width: 1275px) {
+  div.card {
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  div.cards-container {
+    flex-direction: column;
+    padding: 0 20px;
+    gap: 15px;
+  }
+
+  div.card {
+    width: 100%;
+    padding: 3%;
+    min-height: 300px;
+  }
+
+  a.card-link {
+    padding: 0;
+  }
+}
