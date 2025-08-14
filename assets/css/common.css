@@ -140,8 +140,3 @@ table {
 * {
   box-sizing: border-box;
 }
-
-html,
-body {
-  font-family: "Inter", sans-serif;
-}
