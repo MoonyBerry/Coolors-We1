@@ -4,6 +4,546 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Crea una Palette - Coolors</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="assets/img/coolors-tab-icon.png"
+    />
+    <link rel="stylesheet" href="assets/css/common.css" />
+    <link rel="stylesheet" href="assets/css/generatore.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body></body>
+  <body>
+    <header class="header-home">
+      <!----------------------MAIN NAVBAR-------------------------->
+      <nav class="nav-container">
+        <nav class="mobile-nav">
+          <div class="mobileSection">
+            <div class="mobileGenerator">Generatore di Palette</div>
+            <div class="mobilePalette">Esplora Palette</div>
+            <div class="mobileImage">Estrai da Immagine</div>
+            <div class="mobileContrast">Verifica Contrasto</div>
+            <div class="mobilefont">Elenco di Font</div>
+          </div>
+          <div class="strument mobileMenu">
+            <h1>ALTRI STRUMENTI</h1>
+            <div>Elenco di colori</div>
+            <div>Sfoglia Gradienti</div>
+            <div>Crea un Gradiente</div>
+            <div>Crea una Palette Gradiente</div>
+            <div>Selettore Colori</div>
+            <div>Creatore di Collage</div>
+            <div>Convertitore Immagini</div>
+          </div>
+          <div class="app mobileMenu">
+            <h1>APP</h1>
+            <div>App IOS</div>
+            <div>App Android</div>
+            <div>Plugin Figma</div>
+            <div>Estenzione Chrome</div>
+            <div>Pagina Instagram</div>
+          </div>
+          <div class="account mobileMenu">
+            <h1>ACCOUNT</h1>
+            <div>Accedi</div>
+            <div>Registrati</div>
+            <div>Passa a Pro</div>
+          </div>
+        </nav>
+        <div class="overlay"></div>
+        <i class="fa-solid fa-bars"></i>
+        <img src="assets/img/logo.svg" alt="coolors" />
+
+        <ul class="nav-options">
+          <li class="btn-tools">
+            <a href="#">Strumenti<i class="fa-solid fa-chevron-down"></i></a>
+            <div class="bigMenu">
+              <div class="iconSection">
+                <div class="generator icon">
+                  <img
+                    src="assets/img/menu_icon_generate.svg"
+                    alt="generator"
+                  />
+                  <div class="navText">
+                    <h1>Generatore di palette</h1>
+                    <span>crea le tue palette in pochi secondi</span>
+                  </div>
+                </div>
+                <div class="explore icon">
+                  <img src="assets/img/menu_icon_explore.svg" alt="explore" />
+                  <div class="navText">
+                    <h1>Esplora Palette</h1>
+                    <span>Sfoglia milioni di schemi di colori di tendenza</span>
+                  </div>
+                </div>
+                <div class="extract icon">
+                  <img
+                    src="assets/img/menu_icon_image_picker.svg"
+                    alt="extract"
+                  />
+                  <div class="navText">
+                    <h1>Estrai dall'immagine</h1>
+                    <span>Ottieni bellissime palette dalle tue foto</span>
+                  </div>
+                </div>
+                <div class="contrast icon">
+                  <img
+                    src="assets/img/menu_icon_contrast_checker.svg"
+                    alt="contrast"
+                  />
+                  <div class="navText">
+                    <h1>Verifica Constratto</h1>
+                    <span>Verifica il contrasto tra 2 colori</span>
+                  </div>
+                </div>
+                <div class="viewer icon">
+                  <img src="assets/img/menu_icon_visualizer.svg" alt="viewer" />
+                  <div class="navText">
+                    <h1>Visualizzazione Palette</h1>
+                    <span>Anteprima dei tuoi colori su design reali</span>
+                  </div>
+                </div>
+              </div>
+              <div class="iconLessSection">
+                <div class="linkSection">
+                  <ul class="linkSectionUl">
+                    <li><a href="#">Elenco di colori</a></li>
+                    <li><a href="#">Sfoglia Gradienti</a></li>
+                    <li><a href="#">Crea un Gradiente</a></li>
+                    <li><a href="#">Crea una Palette Gradiente</a></li>
+                    <li><a href="#">Selettore Colori</a></li>
+                    <li><a href="#">Creatore di Collage</a></li>
+                    <li><a href="#">Elenco di Font</a></li>
+                    <li><a href="#">Convertitore immagini</a></li>
+                  </ul>
+                </div>
+                <div class="appSection">
+                  <ul class="appSectionUl">
+                    <li class="app">APP</li>
+                    <li><a href="#">App IOS</a></li>
+                    <li><a href="#">App Android</a></li>
+                    <li><a href="#">Plugin Figma</a></li>
+                    <li><a href="#">Estenzione Adobe</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="btn-pro">
+            <a href="#">Passa a pro</a>
+          </li>
+          <li>
+            <span class="spanider"></span>
+          </li>
+          <li class="log-in">
+            <a href="#">Accedi</a>
+          </li>
+          <li class="btn-register">
+            <a href="#">Registrati</a>
+          </li>
+        </ul>
+      </nav>
+      <!--------------------------SECONDA NAVBAR--------------------------------->
+      <nav class="navigation-bar-fence">
+        <div class="generator">
+          Premi la barra spaziatrice per generare palette di colori!
+        </div>
+        <div class="horizontal-navigation-bar">
+          <div class="dots-menu-container">
+            <div class="dots-menu"></div>
+            <div class="dots-menu"></div>
+            <div class="dots-menu"></div>
+          </div>
+          <span class="divider"></span>
+          <a class="hoverLink" href="#"
+            ><svg
+              class="img-secondary"
+              width="43"
+              height="36"
+              viewBox="0 0 43 36"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M36.5916 35.1282H5.64058C1.90426 35.1282 3.2811e-05 33.26 3.2811e-05 29.5595V10.7518C3.2811e-05 7.05134 1.90426 5.20107 5.64058 5.20107H9.84413C11.2452 5.20107 11.6763 4.91365 12.4847 4.01546L13.9397 2.39873C14.8199 1.41079 15.736 0.871826 17.6043 0.871826H24.7537C26.604 0.871826 27.5201 1.41079 28.4182 2.39873L29.8733 4.01546C30.6637 4.89564 31.1127 5.20107 32.5139 5.20107H36.5916C40.328 5.20107 42.2322 7.05134 42.2322 10.7518V29.5595C42.2322 33.26 40.328 35.1282 36.5916 35.1282ZM36.5377 32.2361C38.3161 32.2361 39.34 31.284 39.34 29.4158V10.9134C39.34 9.04523 38.3161 8.09316 36.5377 8.09316H31.7954C30.1787 8.09316 29.3164 7.78781 28.4182 6.78186L26.9992 5.20107C25.9752 4.05141 25.4543 3.76399 23.8555 3.76399H18.5024C16.9037 3.76399 16.3827 4.05141 15.3588 5.20107L13.9397 6.78186C13.0415 7.78781 12.1792 8.09316 10.5625 8.09316H5.69431C3.91594 8.09316 2.89205 9.04523 2.89205 10.9134V29.4158C2.89205 31.284 3.91594 32.2361 5.69431 32.2361H36.5377ZM21.1251 29.3799C15.6822 29.3799 11.317 25.0147 11.317 19.5538C11.317 14.0929 15.6642 9.7279 21.1251 9.7279C26.55 9.7279 30.9151 14.0929 30.9151 19.5538C30.9151 25.0147 26.55 29.3799 21.1251 29.3799ZM8.20923 15.1708C6.98783 15.1708 5.98196 14.1828 5.98196 12.9613C5.98196 11.7218 6.98783 10.7338 8.20923 10.7338C9.43094 10.7338 10.4368 11.7218 10.4368 12.9613C10.4368 14.1828 9.43094 15.1708 8.20923 15.1708ZM21.1251 26.6495C25.0231 26.6495 28.2027 23.4879 28.2027 19.5538C28.2027 15.6198 25.0411 12.4583 21.1251 12.4583C17.209 12.4583 14.0295 15.6198 14.0295 19.5538C14.0295 23.4879 17.209 26.6495 21.1251 26.6495Z"
+                fill="black"
+                stroke="black"
+                stroke-width="1"
+              />
+            </svg>
+          </a>
+
+          <a class="hoverLink" href="#"
+            ><svg
+              class="img-secondary"
+              width="37"
+              height="37"
+              viewBox="0 0 37 37"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M35.9376 12.3395V5.11472C35.9376 2.72063 34.0039 0.779846 31.6184 0.779846H24.4198M35.9376 12.3395H24.4198M35.9376 12.3395V23.8992M24.4198 0.779846V12.3395M24.4198 0.779846H12.9019M24.4198 12.3395H12.9019M24.4198 12.3395V23.8992M35.9376 23.8992V31.1239C35.9376 33.5181 34.0039 35.4588 31.6184 35.4588H24.4198M35.9376 23.8992H24.4198M1.38403 12.3395V5.11472C1.38403 2.72063 3.3178 0.779846 5.70323 0.779846H12.9019M1.38403 12.3395H12.9019M1.38403 12.3395V23.8992M12.9019 0.779846V12.3395M12.9019 12.3395V23.8992M1.38403 23.8992V31.1239C1.38403 33.5181 3.3178 35.4588 5.70323 35.4588H12.9019M1.38403 23.8992H12.9019M24.4198 23.8992H12.9019M24.4198 23.8992V35.4588M12.9019 23.8992V35.4588M24.4198 35.4588H12.9019"
+                stroke="black"
+                stroke-width="3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </a>
+
+          <a class="hoverLink" href="#"
+            ><svg
+              class="img-secondary"
+              width="36"
+              height="37"
+              viewBox="0 0 36 37"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1.08936 15.345L9.38221 0.779846L17.6751 15.345L1.08936 15.345Z"
+                stroke="black"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M27.6957 18.1193C31.7032 18.1193 34.952 14.8588 34.952 10.8367C34.952 6.81466 31.7032 3.55414 27.6957 3.55414C23.6882 3.55414 20.4395 6.81466 20.4395 10.8367C20.4395 14.8588 23.6882 18.1193 27.6957 18.1193Z"
+                stroke="black"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M6.61792 20.8936L6.61792 35.4588H21.1304V20.8936H6.61792Z"
+                stroke="black"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </a>
+
+          <a class="hoverLink" href="#"
+            ><svg
+              class="img-secondary"
+              width="55"
+              height="55"
+              viewBox="0 0 42 42"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M11.8235 35.25C18.2894 41.7393 28.7726 41.7393 35.2385 35.25C41.7044 28.7607 41.7044 18.2393 35.2385 11.75C28.7726 5.26065 18.2894 5.26065 11.8235 11.75C5.35762 18.2393 5.35762 28.7607 11.8235 35.25Z"
+                stroke="black"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="3.5"
+              />
+              <path
+                d="M23.531 6.88293V40.117"
+                stroke="black"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="3.5"
+              />
+            </svg>
+          </a>
+
+          <a class="hoverLink" href="#"
+            ><svg
+              class="img-secondary"
+              width="36"
+              height="29"
+              viewBox="0 0 36 29"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M28.7164 1.29739C28.593 1.01967 28.3917 0.783713 28.1369 0.618118C27.8821 0.452523 27.5847 0.364402 27.2808 0.364441H24.1396C23.7231 0.364441 23.3236 0.529916 23.029 0.824463C22.7345 1.11901 22.569 1.5185 22.569 1.93506C22.569 2.35161 22.7345 2.7511 23.029 3.04565C23.3236 3.3402 23.7231 3.50567 24.1396 3.50567H26.2599L31.1461 14.5H22.569C21.7359 14.5 20.9369 14.8309 20.3478 15.42C19.7587 16.0091 19.4278 16.8081 19.4278 17.6412V19.2118H16.2865V17.6412C16.2865 16.8081 15.9556 16.0091 15.3665 15.42C14.7774 14.8309 13.9784 14.5 13.1453 14.5H4.56817L9.45436 3.50567H11.5747C11.9912 3.50567 12.3907 3.3402 12.6853 3.04565C12.9798 2.7511 13.1453 2.35161 13.1453 1.93506C13.1453 1.5185 12.9798 1.11901 12.6853 0.824463C12.3907 0.529916 11.9912 0.364441 11.5747 0.364441H8.43346C8.12957 0.364402 7.8322 0.452523 7.57739 0.618118C7.32259 0.783713 7.12129 1.01967 6.99792 1.29739C0.492428 15.9418 0.580383 15.5994 0.580383 16.0565V16.0706V23.9237C0.580383 25.1733 1.07681 26.3718 1.96045 27.2554C2.84409 28.1391 4.04257 28.6355 5.29223 28.6355H11.5747C12.8243 28.6355 14.0228 28.1391 14.9065 27.2554C15.7901 26.3718 16.2865 25.1733 16.2865 23.9237V22.353H19.4278V23.9237C19.4278 25.1733 19.9242 26.3718 20.8078 27.2554C21.6915 28.1391 22.8899 28.6355 24.1396 28.6355H30.4221C31.6717 28.6355 32.8702 28.1391 33.7538 27.2554C34.6375 26.3718 35.1339 25.1733 35.1339 23.9237V16.0706V16.0565C35.1245 15.2963 34.6926 15.0026 28.7164 1.29739ZM13.1453 23.9237C13.1453 24.3402 12.9798 24.7397 12.6853 25.0343C12.3907 25.3288 11.9912 25.4943 11.5747 25.4943H5.29223C4.87568 25.4943 4.47618 25.3288 4.18164 25.0343C3.88709 24.7397 3.72161 24.3402 3.72161 23.9237V17.6412H13.1453V23.9237ZM31.9927 23.9237C31.9927 24.3402 31.8272 24.7397 31.5327 25.0343C31.2381 25.3288 30.8386 25.4943 30.4221 25.4943H24.1396C23.7231 25.4943 23.3236 25.3288 23.029 25.0343C22.7345 24.7397 22.569 24.3402 22.569 23.9237V17.6412H31.9927V23.9237Z"
+                fill="black"
+              />
+            </svg>
+          </a>
+
+          <a class="hoverLink" href="#"
+            ><svg
+              class="img-secondary"
+              width="39"
+              height="36"
+              viewBox="0 0 39 36"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M13.897 32.4128C11.4504 32.4128 9.46711 30.4165 9.46711 27.954C9.46711 25.4916 11.4504 23.4953 13.897 23.4953C16.3437 23.4953 18.3269 25.4916 18.3269 27.954C18.3269 30.4165 16.3437 32.4128 13.897 32.4128ZM6.51379 27.954C6.51379 32.0582 9.8194 35.3853 13.897 35.3853C17.9746 35.3853 21.2803 32.0582 21.2803 27.954C21.2803 23.8499 17.9746 20.5228 13.897 20.5228C9.8194 20.5228 6.51379 23.8499 6.51379 27.954Z"
+                fill="black"
+              />
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M0.607178 27.9538C0.607178 28.7747 1.2683 29.4401 2.08382 29.4401H7.99041C8.80595 29.4401 9.46704 28.7749 9.46704 27.9541C9.46704 27.1332 8.80595 26.4676 7.99041 26.4676H2.08382C1.2683 26.4676 0.607178 27.133 0.607178 27.9538Z"
+                fill="black"
+              />
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M18.3269 27.954C18.3269 28.7748 18.988 29.4398 19.8035 29.4398H37.5233C38.3388 29.4398 38.9999 28.7744 38.9999 27.9536C38.9999 27.1328 38.3388 26.4673 37.5233 26.4673H19.8035C18.988 26.4673 18.3269 27.1332 18.3269 27.954Z"
+                fill="black"
+              />
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M25.7102 12.5963C28.1568 12.5963 30.1402 10.6001 30.1402 8.13753C30.1402 5.67513 28.1568 3.67878 25.7102 3.67878C23.2636 3.67878 21.2803 5.67513 21.2803 8.13753C21.2803 10.6001 23.2636 12.5963 25.7102 12.5963ZM33.0934 8.13753C33.0934 12.2418 29.7879 15.5688 25.7102 15.5688C21.6325 15.5688 18.3269 12.2418 18.3269 8.13753C18.3269 4.03347 21.6325 0.706401 25.7102 0.706401C29.7879 0.706401 33.0934 4.03347 33.0934 8.13753Z"
+                fill="black"
+              />
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M38.9999 8.13741C38.9999 8.95814 38.3388 9.6236 37.5232 9.6236H31.6166C30.8011 9.6236 30.14 8.95853 30.14 8.1376C30.14 7.31687 30.8011 6.65103 31.6166 6.65103H37.5232C38.3388 6.65103 38.9999 7.31648 38.9999 8.13741Z"
+                fill="black"
+              />
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M21.2802 8.13755C21.2802 8.95848 20.6192 9.62335 19.8036 9.62335H2.08382C1.2683 9.62335 0.607178 8.9579 0.607178 8.13716C0.607178 7.31624 1.2683 6.65098 2.08382 6.65098H19.8036C20.6192 6.65098 21.2802 7.31681 21.2802 8.13755Z"
+                fill="black"
+              />
+            </svg>
+          </a>
+
+          <span class="divider"></span>
+
+          <a href="#"
+            ><svg
+              class="img-secondary"
+              width="41"
+              height="17"
+              viewBox="0 0 41 17"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1.00004 1.39197V14.8844M1.00004 14.8844H14.4925M1.00004 14.8844C6.23376 10.1877 11.0809 4.87032 18.4172 3.83815C22.7627 3.22678 27.189 4.04413 31.0294 6.16694C34.8699 8.28998 37.9163 11.6033 39.7097 15.6081"
+                stroke="#7d7c83"
+                stroke-width="3.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </a>
+
+          <a href="#"
+            ><svg
+              class="img-secondary"
+              width="41"
+              height="17"
+              viewBox="0 0 41 17"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M40.0322 1.39197V14.8844M40.0322 14.8844H26.5397M40.0322 14.8844C34.7985 10.1877 29.9513 4.87032 22.615 3.83815C18.2695 3.22678 13.8432 4.04413 10.0028 6.16694C6.16236 8.28998 3.11593 11.6033 1.32251 15.6081"
+                stroke="#7d7c83"
+                stroke-width="3.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stro
+              />
+            </svg>
+          </a>
+
+          <span class="divider"></span>
+
+          <a class="navbar-functionality" href="#"
+            ><svg
+              class="img-secondary"
+              width="40"
+              height="29"
+              viewBox="0 0 40 29"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1.93559 14.5L0.737551 14.0208C0.614501 14.3284 0.614501 14.6716 0.737551 14.9792L1.93559 14.5ZM38.0647 14.5L39.2626 14.9792C39.3857 14.6716 39.3857 14.3284 39.2626 14.0207L38.0647 14.5ZM20.0001 26.1129C14.0284 26.1129 9.83524 23.1408 7.08822 20.0884C5.71379 18.5613 4.71781 17.0298 4.06625 15.8799C3.74122 15.3063 3.5039 14.8313 3.34971 14.5042C3.27265 14.3407 3.21649 14.2145 3.18065 14.1318C3.16273 14.0905 3.1499 14.06 3.14209 14.0413C3.13818 14.0319 3.13553 14.0254 3.13412 14.022C3.13342 14.0202 3.13302 14.0192 3.13294 14.019C3.13283 14.0188 3.1329 14.0189 3.13294 14.019C3.13302 14.0192 3.13342 14.0202 3.13412 14.022C3.13428 14.0224 3.13363 14.0208 1.93559 14.5C0.737551 14.9792 0.737309 14.9786 0.737551 14.9792C0.737658 14.9795 0.738384 14.9813 0.738598 14.9818C0.739028 14.9829 0.739538 14.9841 0.740128 14.9856C0.741309 14.9885 0.742812 14.9922 0.744638 14.9967C0.748291 15.0056 0.753238 15.0177 0.75949 15.0327C0.771994 15.0628 0.789722 15.1048 0.812756 15.1579C0.858817 15.2642 0.926152 15.4152 1.01543 15.6046C1.19389 15.9832 1.4606 16.5162 1.82104 17.1523C2.54044 18.4218 3.64122 20.1161 5.17002 21.8148C8.22943 25.2141 13.0685 28.6935 20.0001 28.6935V26.1129ZM1.93559 14.5C3.13363 14.9792 3.13344 14.9796 3.13328 14.98C3.13334 14.9799 3.13325 14.9801 3.13328 14.98C3.13469 14.9766 3.13818 14.9681 3.14209 14.9587C3.1499 14.9399 3.16273 14.9094 3.18065 14.8681C3.21649 14.7854 3.27265 14.6592 3.34971 14.4957C3.5039 14.1687 3.74122 13.6936 4.06625 13.12C4.71781 11.9702 5.71379 10.4387 7.08822 8.91152C9.83524 5.85926 14.0284 2.88705 20.0001 2.88705V0.306396C13.0685 0.306396 8.22943 3.78581 5.17002 7.18517C3.64122 8.88383 2.54044 10.5781 1.82104 11.8477C1.4606 12.4838 1.19389 13.0168 1.01543 13.3953C0.926152 13.5847 0.858817 13.7357 0.812756 13.842C0.789722 13.8952 0.771994 13.9372 0.75949 13.9672C0.753238 13.9822 0.748291 13.9943 0.744638 14.0032C0.742812 14.0077 0.741309 14.0114 0.740128 14.0143C0.739538 14.0158 0.739028 14.0171 0.738598 14.0181C0.738705 14.0179 0.738384 14.0187 0.738598 14.0181C0.738356 14.0187 0.737551 14.0208 1.93559 14.5ZM20.0001 2.88705C25.9718 2.88705 30.1651 5.85926 32.9119 8.91152C34.2864 10.4387 35.2825 11.9702 35.9341 13.12C36.259 13.6936 36.4964 14.1687 36.6505 14.4958C36.7277 14.6592 36.7839 14.7854 36.8195 14.8681C36.8376 14.9095 36.8505 14.9399 36.8582 14.9587C36.8621 14.9681 36.8647 14.9746 36.8662 14.978C36.8668 14.9797 36.8673 14.9807 36.8673 14.9809C36.867 14.9805 36.8668 14.9792 38.0647 14.5C39.2626 14.0207 39.2629 14.0214 39.2626 14.0207C39.2624 14.0205 39.2619 14.0187 39.2616 14.0181C39.2613 14.0171 39.2608 14.0158 39.26 14.0143C39.259 14.0114 39.2575 14.0077 39.2557 14.0032C39.252 13.9943 39.2471 13.9822 39.2407 13.9672C39.2283 13.9372 39.2105 13.8952 39.1875 13.842C39.1413 13.7357 39.0742 13.5847 38.9849 13.3953C38.8064 13.0168 38.5398 12.4837 38.1793 11.8477C37.4598 10.5781 36.3591 8.88383 34.8301 7.18517C31.7707 3.78581 26.9318 0.306396 20.0001 0.306396V2.88705ZM38.0647 14.5C36.8668 14.0207 36.8668 14.0203 36.867 14.0199C36.867 14.02 36.867 14.0198 36.867 14.0199C36.8655 14.0233 36.8621 14.0319 36.8582 14.0413C36.8505 14.06 36.8376 14.0905 36.8195 14.1318C36.7839 14.2145 36.7277 14.3407 36.6505 14.5042C36.4964 14.8313 36.259 15.3063 35.9341 15.8799C35.2825 17.0298 34.2864 18.5613 32.9119 20.0884C30.1651 23.1408 25.9718 26.1129 20.0001 26.1129V28.6935C26.9318 28.6935 31.7707 25.2141 34.8301 21.8148C36.3591 20.1161 37.4598 18.4218 38.1793 17.1523C38.5398 16.5162 38.8064 15.9832 38.9849 15.6046C39.0742 15.4152 39.1413 15.2642 39.1875 15.1579C39.2105 15.1048 39.2283 15.0628 39.2407 15.0327C39.2471 15.0177 39.252 15.0056 39.2557 14.9967C39.2575 14.9922 39.259 14.9885 39.26 14.9856C39.2608 14.9841 39.2613 14.9829 39.2616 14.9818C39.2613 14.9821 39.2619 14.9813 39.2616 14.9818C39.2619 14.9812 39.2626 14.9792 38.0647 14.5ZM20.0001 18.3709C17.8623 18.3709 16.1292 16.6379 16.1292 14.5H13.5485C13.5485 18.0631 16.437 20.9516 20.0001 20.9516V18.3709ZM23.8711 14.5C23.8711 16.6379 22.138 18.3709 20.0001 18.3709V20.9516C23.5633 20.9516 26.4518 18.0631 26.4518 14.5H23.8711ZM20.0001 10.629C22.138 10.629 23.8711 12.3621 23.8711 14.5H26.4518C26.4518 10.9368 23.5633 8.04835 20.0001 8.04835V10.629ZM20.0001 8.04835C16.437 8.04835 13.5485 10.9368 13.5485 14.5H16.1292C16.1292 12.3621 17.8623 10.629 20.0001 10.629V8.04835Z"
+                fill="black"
+              />
+            </svg>
+            Visualizza
+          </a>
+          <a class="navbar-functionality" href="#"
+            ><svg
+              class="img-secondary"
+              width="40"
+              height="43"
+              viewBox="0 0 40 43"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M32.4692 14.836H26.042V18.6486H32.4692C34.3804 18.6486 35.8632 19.6246 35.8632 20.4646V37.3708C35.8632 38.2108 34.3804 39.1868 32.4692 39.1868H8.17543C6.26419 39.1868 4.78135 38.2108 4.78135 37.3708V20.4652C4.78135 19.6252 6.26419 18.6492 8.17543 18.6492H14.6013V14.8366H8.17543C4.13368 14.8366 0.967773 17.3091 0.967773 20.4652V37.3714C0.967773 40.5282 4.13368 43 8.17543 43H32.4698C36.5109 43 39.6775 40.5276 39.6775 37.3714V20.4652C39.6768 17.3084 36.5109 14.836 32.4692 14.836Z"
+                fill="black"
+              />
+              <path
+                d="M14.6794 9.50282C15.1675 9.50282 15.655 9.31664 16.0275 8.94428L18.4148 6.55761V14.836V18.6485V25.9521C18.4148 27.005 19.2684 27.8584 20.3216 27.8584C21.3748 27.8584 22.2284 27.005 22.2284 25.9521V18.6485V14.836V6.42862L24.7447 8.94428C25.1171 9.31664 25.6053 9.50282 26.0928 9.50282C26.5803 9.50282 27.0684 9.31664 27.4409 8.94428C28.1858 8.20019 28.1858 6.99288 27.4409 6.24879L21.7479 0.55727C21.3754 0.184909 20.8879 0 20.4004 0C20.3953 0 20.3909 0 20.3858 0C20.3807 0 20.3762 0 20.3712 0C19.8837 0 19.3962 0.184909 19.0237 0.55727L13.3307 6.24879C12.5857 6.99288 12.5857 8.20019 13.3307 8.94428C13.7038 9.31664 14.1913 9.50282 14.6794 9.50282Z"
+                fill="black"
+              />
+            </svg>
+            Esporta
+          </a>
+          <a class="navbar-functionality" href="#"
+            ><svg
+              class="img-secondary"
+              width="41"
+              height="38"
+              viewBox="0 0 41 38"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M36.929 4.65805C35.9588 3.68445 34.8059 2.91195 33.5365 2.38485C32.2671 1.85775 30.9061 1.58643 29.5317 1.58643C28.1572 1.58643 26.7962 1.85775 25.5268 2.38485C24.2574 2.91195 23.1045 3.68445 22.1343 4.65805L20.6451 6.16654L19.156 4.65805C18.1858 3.68445 17.0329 2.91195 15.7635 2.38485C14.4941 1.85775 13.1331 1.58643 11.7586 1.58643C10.3841 1.58643 9.02313 1.85775 7.75372 2.38485C6.48431 2.91195 5.33144 3.68445 4.36121 4.65805C0.261223 8.75804 0.00980807 15.6816 5.17347 20.942L20.6451 36.4136L36.1168 20.942C41.2804 15.6816 41.029 8.75804 36.929 4.65805Z"
+                stroke="black"
+                stroke-width="3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            Salva
+          </a>
+
+          <span class="divider"></span>
+          <div class="tendon-container">
+            <div class="tendon"></div>
+            <div class="tendon"></div>
+            <div class="tendon"></div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!----------------------------------PALETTE DI COLORI---------------------------------->
+    <main class="color-palette-main-container">
+      <div class="palette-container">
+        <div class="colorContainer">
+          <div class="optionContainer">
+            <div class="icon x"><i class="fa-solid fa-x"></i></div>
+            <div class="icon circle-half">
+              <i class="fa-solid fa-circle-half-stroke"></i>
+            </div>
+            <div class="icon bars"><i class="fa-solid fa-bars"></i></div>
+            <div class="icon heart"><i class="fa-regular fa-heart"></i></div>
+            <div class="icon left-right">
+              <i class="fa-solid fa-arrows-left-right"></i>
+            </div>
+            <div class="icon clone"><i class="fa-solid fa-clone"></i></div>
+            <div class="icon divOpen">
+              <i class="fa-solid fa-lock-open lock"></i>
+            </div>
+          </div>
+          <div class="description">
+            <h1>Codice colore</h1>
+            <p>Nome colore</p>
+          </div>
+        </div>
+        <!--  -->
+        <div class="colorContainer">
+          <div class="optionContainer">
+            <div class="icon x"><i class="fa-solid fa-x"></i></div>
+            <div class="icon circle-half">
+              <i class="fa-solid fa-circle-half-stroke"></i>
+            </div>
+            <div class="icon bars"><i class="fa-solid fa-bars"></i></div>
+            <div class="icon heart"><i class="fa-regular fa-heart"></i></div>
+            <div class="icon left-right">
+              <i class="fa-solid fa-arrows-left-right"></i>
+            </div>
+            <div class="icon clone"><i class="fa-solid fa-clone"></i></div>
+            <div class="icon divOpen">
+              <i class="fa-solid fa-lock-open lock"></i>
+            </div>
+          </div>
+          <div class="description">
+            <h1>Codice colore</h1>
+            <p>Nome colore</p>
+          </div>
+        </div>
+        <div class="colorContainer">
+          <div class="optionContainer">
+            <div class="icon x"><i class="fa-solid fa-x"></i></div>
+            <div class="icon circle-half">
+              <i class="fa-solid fa-circle-half-stroke"></i>
+            </div>
+            <div class="icon bars"><i class="fa-solid fa-bars"></i></div>
+            <div class="icon heart"><i class="fa-regular fa-heart"></i></div>
+            <div class="icon left-right">
+              <i class="fa-solid fa-arrows-left-right"></i>
+            </div>
+            <div class="icon clone"><i class="fa-solid fa-clone"></i></div>
+            <div class="icon divOpen">
+              <i class="fa-solid fa-lock-open lock"></i>
+            </div>
+          </div>
+          <div class="description">
+            <h1>Codice colore</h1>
+            <p>Nome colore</p>
+          </div>
+        </div>
+        <div class="colorContainer">
+          <div class="optionContainer">
+            <div class="icon x"><i class="fa-solid fa-x"></i></div>
+            <div class="icon circle-half">
+              <i class="fa-solid fa-circle-half-stroke"></i>
+            </div>
+            <div class="icon bars"><i class="fa-solid fa-bars"></i></div>
+            <div class="icon heart"><i class="fa-regular fa-heart"></i></div>
+            <div class="icon left-right">
+              <i class="fa-solid fa-arrows-left-right"></i>
+            </div>
+            <div class="icon clone"><i class="fa-solid fa-clone"></i></div>
+            <div class="icon divOpen">
+              <i class="fa-solid fa-lock-open lock"></i>
+            </div>
+          </div>
+          <div class="description">
+            <h1>Codice colore</h1>
+            <p>Nome colore</p>
+          </div>
+        </div>
+        <div class="colorContainer">
+          <div class="optionContainer">
+            <div class="icon x"><i class="fa-solid fa-x"></i></div>
+            <div class="icon circle-half">
+              <i class="fa-solid fa-circle-half-stroke"></i>
+            </div>
+            <div class="icon bars"><i class="fa-solid fa-bars"></i></div>
+            <div class="icon heart"><i class="fa-regular fa-heart"></i></div>
+            <div class="icon left-right">
+              <i class="fa-solid fa-arrows-left-right"></i>
+            </div>
+            <div class="icon clone"><i class="fa-solid fa-clone"></i></div>
+            <div class="icon divOpen">
+              <i class="fa-solid fa-lock-open lock"></i>
+            </div>
+          </div>
+          <div class="description">
+            <h1>Codice colore</h1>
+            <p>Nome colore</p>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script type="module" src="assets/js/generatore.js"></script>
+  </body>
 </html>

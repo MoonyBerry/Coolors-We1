@@ -1,5 +1,5 @@
 /*
-    File che contiene tutte le importazioni dei file js tramite "import"
+    File che contiene tutte le importazioni dei file js tramite "import" per la prima pagina
 */
 
 import "../../components/cards/cards.js";

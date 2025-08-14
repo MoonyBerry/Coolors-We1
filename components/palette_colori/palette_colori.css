@@ -1,7 +1,7 @@
 .palette-container {
   display: flex;
   flex-wrap: nowrap;
-  height: 100vh;
+  height: 100%;
   width: 100%;
 }
 
