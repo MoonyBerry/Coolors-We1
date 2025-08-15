@@ -3,6 +3,9 @@
   <clipPath id="clip-img1">
     <rect x="0" y="0" width="4000px" height="3000px" />
   </clipPath>
+    <clipPath id="clip-img2">
+    <rect x="0" y="0" width="4000px" height="3000px" />
+  </clipPath>
 </defs>
 <style type="text/css">
 
