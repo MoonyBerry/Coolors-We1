@@ -19,11 +19,14 @@ const $body = document.querySelector("body");
 const $divBackground = document.querySelectorAll("div.colorContainer");
 const $colorHexCode = document.querySelectorAll("div.description h1");
 const $nameColor = document.querySelectorAll("div.description p");
+const $generatorButton = document.querySelector("div.button-generator-navbar");
 
 $body.addEventListener("keydown", changingColorPalette);
+$generatorButton.addEventListener("click", changingColorPalette);
 
 function changingColorPalette(e) {
-  if (e.code === "Space") {
+  console.log(e.code);
+  if ((e.type === "keydown" && e.code === "Space") || e.type === "click") {
     let hexCode = "#";
 
     //GENERATING RANDOM HEXCODE
