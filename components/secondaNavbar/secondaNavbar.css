@@ -135,7 +135,7 @@
 @media screen and (max-width: 768px) {
   .navigation-bar-fence {
     justify-content: space-between;
-    position: fixed;
+    position: absolute;
     bottom: 0;
     left: 0;
   }
