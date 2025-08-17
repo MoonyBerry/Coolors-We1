@@ -4,3 +4,4 @@
 
 import "../../components/navbar_principale/navbar_principale.js";
 import "../../components/palette_colori/palette_colori.js";
+import "../../components/secondaNavbar/secondaNavbar.js";
