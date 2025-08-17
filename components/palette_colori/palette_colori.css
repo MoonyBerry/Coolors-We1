@@ -1,3 +1,9 @@
+body {
+  overflow: hidden;
+}
+.color-palette-main-container {
+  height: 88vh;
+}
 .palette-container {
   display: flex;
   flex-wrap: nowrap;
@@ -7,6 +13,7 @@
 
 .colorContainer {
   display: flex;
+  position: relative;
   height: 100%;
   width: 100%;
   background: rgb(45, 94, 143);
@@ -22,7 +29,7 @@
 .optionContainer {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 2px;
   opacity: 0;
 }
 .colorContainer:hover .optionContainer {
@@ -42,4 +49,53 @@
   border-radius: 10px;
   height: 40px;
   width: 40px;
+}
+.icon:hover {
+  cursor: pointer;
+}
+
+.btnPlus {
+  background: white;
+  position: absolute;
+  border-radius: 50%;
+  max-width: 12px;
+  max-height: 12px;
+  padding: 20px;
+  bottom: 440px;
+  z-index: 25;
+  font-size: 20px;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+.btnPlus:hover {
+  cursor: pointer;
+}
+.containerPlus {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  height: 100%;
+  width: 45px;
+  top: 0px;
+  right: -22px;
+  z-index: 25;
+}
+
+.containerPlus:hover .btnPlus {
+  display: flex;
+}
+.description {
+  margin-bottom: 5rem;
+}
+.description h1 {
+  font-size: 30px;
+  padding: 10px;
+  margin: 15px 10px 15px 10px;
+}
+.description:hover h1 {
+  background: rgba(72, 72, 72, 0.5);
+
+  border-radius: 10px;
+  cursor: pointer;
 }
