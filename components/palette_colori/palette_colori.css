@@ -1,16 +1,19 @@
 .color-palette-main-container {
-  height: 88vh;
+  height: auto;
 }
 .palette-container {
   display: flex;
   flex-wrap: nowrap;
   height: 100%;
   width: 100%;
+  position: relative;
+  bottom: 0;
+  left: 0;
 }
 
 .colorContainer {
   display: flex;
-  position: relative;
+  /*  position: relative; */
   height: 100%;
   width: 100%;
   background: rgb(45, 94, 143);
@@ -18,10 +21,10 @@
   justify-content: end;
   align-items: center;
   text-align: center;
-  gap: 30px;
+  /*   gap: 30px; */
 }
 .icon:hover {
-  background: rgba(72, 72, 72, 0.5);
+  background: rgba(0, 0, 0, 0.05);
 }
 .optionContainer {
   display: flex;
@@ -50,7 +53,7 @@
 .icon:hover {
   cursor: pointer;
 }
-
+/* 
 .btnPlus {
   background: white;
   position: absolute;
@@ -81,7 +84,7 @@
 
 .containerPlus:hover .btnPlus {
   display: flex;
-}
+} */
 .description {
   margin-bottom: 5rem;
 }
@@ -91,7 +94,7 @@
   margin: 15px 10px 15px 10px;
 }
 .description:hover h1 {
-  background: rgba(72, 72, 72, 0.5);
+  background: rgba(0, 0, 0, 0.05);
 
   border-radius: 10px;
   cursor: pointer;
