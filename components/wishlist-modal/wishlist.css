@@ -1,0 +1,205 @@
+div.wishlist-modal-container,
+div.wishlist-modal-overlay {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* quando si aggiunge la classe show */
+div.wishlist-modal-container.show,
+div.wishlist-modal-overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/*WISHLIST MODAL GENERAL RULES*/
+div.wishlist-modal-container {
+  width: 468px;
+  height: auto;
+  min-height: 440px;
+  border-radius: 14px;
+  z-index: 100;
+  background: white;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: rgba(0, 0, 0, 0.1) 0 0 20px;
+
+  transition: transform 0.2s ease-in-out;
+}
+
+/*STYLING WISHLIST MODAL HEADER*/
+div.wishlist-modal {
+  width: 100%;
+  position: relative;
+  padding: 0 90px;
+  border-bottom: 1px solid lightgray;
+}
+
+div.close-wishlist-modal {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+div.close-wishlist-modal svg {
+  width: 18px;
+  height: 18px;
+}
+
+div.close-wishlist-modal:hover {
+  background-color: rgba(172, 172, 172, 0.2);
+  border-radius: 5px;
+}
+
+div.wishlist-modal-title {
+  line-height: 46px;
+  letter-spacing: -0.03em;
+  font-size: 16px;
+  font-weight: 600;
+  width: 100%;
+  text-align: center;
+}
+
+/*STYLING WISHLIST MODAL SECTION*/
+nav.wishlist-modal-section {
+  width: 100%;
+  height: 56px;
+  border-top: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
+  padding: 0 20px;
+}
+
+nav.wishlist-modal-section ul {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+nav.wishlist-modal-section li {
+  padding: 0 10px;
+}
+
+nav.wishlist-modal-section a {
+  text-decoration: none;
+  color: #7d7c83;
+  transition: color 0.1s ease-in-out;
+}
+
+nav.wishlist-modal-section a:hover {
+  color: black;
+}
+
+/*STYLING WISHLIST MODAL FORM*/
+div.wishlist-modal-body {
+  width: 100%;
+  height: 100%;
+}
+
+div.wishlist-form-body {
+  padding: 24px;
+  border-bottom: 1px solid lightgray;
+}
+
+div.wishlist-input-group {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+div.wishlist-input-group:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+form.wishlist-form label {
+  font-size: 13px;
+  font-weight: 500;
+  padding-bottom: 14px;
+}
+
+/*INPUT*/
+form.wishlist-form input {
+  border-radius: 10px;
+  height: 46px;
+  padding: 0 14px;
+  font-size: 15px;
+  width: 100%;
+  border: 1px solid lightgray;
+  transition: border-color 0.1s ease-in-out;
+}
+
+/*TEXTAREA*/
+textarea#wishlist-descrizione {
+  resize: none;
+  height: 84px;
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid lightgray;
+  transition: border-color 0.1s ease-in-out;
+}
+
+textarea#wishlist-descrizione:hover,
+form.wishlist-form input:hover {
+  border-color: rgb(156, 156, 156);
+}
+
+textarea:focus,
+input:focus {
+  outline-color: #0066ff;
+}
+
+/*WISHLIST SAVE BUTTON*/
+div.wishlist-button-container {
+  padding: 16px;
+}
+
+button.wishlist-submit-button {
+  border: none;
+  background-color: #0066ff;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  height: 46px;
+  width: 100%;
+  padding: 0 21px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/*WISHLIST MODAL OVERLAY*/
+div.wishlist-modal-overlay {
+  width: 100%;
+  height: 100%;
+  background: rgba(72, 72, 72, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 25;
+}
+
+@media screen and (max-width: 575px) {
+  div.wishlist-modal-container {
+    width: 100%;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    transform: translateY(100%); /* parte fuori dalla schermata */
+    border-radius: 14px 14px 0 0;
+  }
+
+  div.wishlist-modal-container.show {
+    transform: translateY(0); /* entra dal basso */
+  }
+}

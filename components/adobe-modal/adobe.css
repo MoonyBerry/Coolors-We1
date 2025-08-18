@@ -150,6 +150,7 @@ div.adobe-overlay {
     bottom: 0;
     left: 0;
     transform: translateY(100%); /* parte fuori dalla schermata */
+    border-radius: 14px 14px 0 0;
   }
 
   div.adobe-modal.show {
