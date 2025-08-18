@@ -9,3 +9,10 @@
   left: 0;
   right: 0;
 }
+
+@media screen and (max-width: 768px) {
+  .color-palette-main-container {
+    top: 60px;
+    bottom: 56px;
+  }
+}
