@@ -14,6 +14,22 @@ $closeEsporta.addEventListener("click", () => {
   $esportaOverlay.classList.toggle("show");
 });
 
+//OPENING AND CLOSING WISHLIST MODAL
+const $wishlistModal = document.querySelector("div.wishlist-modal-container");
+const $openWishlist = document.querySelector("a.openWishlist");
+const $wishlistOverlay = document.querySelector("div.wishlist-modal-overlay");
+const $closeWishlist = document.querySelector("div.close-wishlist-modal");
+
+$openWishlist.addEventListener("click", () => {
+  $wishlistModal.classList.toggle("show");
+  $wishlistOverlay.classList.toggle("show");
+});
+
+$closeWishlist.addEventListener("click", () => {
+  $wishlistModal.classList.toggle("show");
+  $wishlistOverlay.classList.toggle("show");
+});
+
 //MAKING SPACEBAR CHANGING COLOR PALETTE
 const $body = document.querySelector("body");
 const $divBackground = document.querySelectorAll("div.colorContainer");
