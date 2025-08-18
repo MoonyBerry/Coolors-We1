@@ -14,7 +14,7 @@ body {
   border-radius: 14px;
   width: 369px;
   height: 348px;
-  padding: 2rem;
+  padding: 1rem;
   gap: 1rem;
   z-index: 50;
   text-align: center;
@@ -27,6 +27,22 @@ body {
   justify-content: center;
 }
 
+.modal-suscribe-google > .fa-google {
+  width: 10%;
+  margin-left: 10px;
+  font-size: 20px;
+}
+.modal-suscribe-google > span {
+  width: 90%;
+}
+.modal-suscribe-apple > .fa-apple {
+  width: 10%;
+  margin-left: 10px;
+  font-size: 20px;
+}
+.modal-suscribe-apple > span {
+  width: 90%;
+}
 .modal-suscribe-google,
 .modal-suscribe-apple {
   display: flex;
