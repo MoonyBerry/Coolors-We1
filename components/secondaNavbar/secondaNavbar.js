@@ -5,13 +5,13 @@ const $esportaOverlay = document.querySelector("div.esporta-modal-overlay");
 const $closeEsporta = document.querySelector("div.close-esporta-modal");
 
 $openEsporta.addEventListener("click", () => {
-  $esportaModal.classList.toggle("show");
-  $esportaOverlay.classList.toggle("show");
+  $esportaModal.classList.add("show");
+  $esportaOverlay.classList.add("show");
 });
 
 $closeEsporta.addEventListener("click", () => {
-  $esportaModal.classList.toggle("show");
-  $esportaOverlay.classList.toggle("show");
+  $esportaModal.classList.remove("show");
+  $esportaOverlay.classList.remove("show");
 });
 
 //OPENING AND CLOSING WISHLIST MODAL
@@ -21,13 +21,20 @@ const $wishlistOverlay = document.querySelector("div.wishlist-modal-overlay");
 const $closeWishlist = document.querySelector("div.close-wishlist-modal");
 
 $openWishlist.addEventListener("click", () => {
-  $wishlistModal.classList.toggle("show");
-  $wishlistOverlay.classList.toggle("show");
+  $wishlistModal.classList.add("show");
+  $wishlistOverlay.classList.add("show");
 });
 
 $closeWishlist.addEventListener("click", () => {
-  $wishlistModal.classList.toggle("show");
-  $wishlistOverlay.classList.toggle("show");
+  $wishlistModal.classList.remove("show");
+  $wishlistOverlay.classList.remove("show");
+});
+
+const $wishlistSaveButton = document.querySelector(
+  "button.wishlist-submit-button"
+);
+$wishlistSaveButton.addEventListener("click", (event) => {
+  event.preventDefault();
 });
 
 //MAKING SPACEBAR CHANGING COLOR PALETTE
