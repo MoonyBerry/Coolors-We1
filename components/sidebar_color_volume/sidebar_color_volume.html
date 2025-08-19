@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="assets/img/coolors-tab-icon.png"
+    />
+    <link rel="stylesheet" href="../../assets/css/common.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="sidebar_color_volume.css" />
+  </head>
+  <body>
+    <div class="container-sidebar">
+      <div class="sidebar-color-volume-container">
+        <div class="title-sidebar-color-volume">
+          <h1>Regola palette</h1>
+        </div>
+        <div class="divider-sidebar-color-volume"></div>
+        <div class="option-sidebar-color-volume-container">
+          <div class="color-tone section-sidebar-volume">
+            <div class="number-volume">
+              <span>Tonalità</span>
+              <input type="number" />
+            </div>
+            <input
+              type="range"
+              class="volume-range volume-rainbow"
+              min="0"
+              max="360"
+              value="180"
+            />
+          </div>
+          <div class="color-saturation section-sidebar-volume">
+            <div class="number-volume">
+              <span>Saturazione</span>
+              <input type="number" />
+            </div>
+            <input
+              class="volume-range volume-saturation"
+              type="range"
+              name=""
+              id=""
+            />
+          </div>
+          <div class="color-brightness section-sidebar-volume">
+            <div class="number-volume">
+              <span>Luminosità</span>
+              <input type="number" />
+            </div>
+            <input
+              class="volume-range volume-brightness"
+              type="range"
+              name=""
+              id=""
+            />
+          </div>
+          <div class="color-temperature section-sidebar-volume">
+            <div class="number-volume">
+              <span>Temperatura</span>
+              <input type="number" />
+            </div>
+            <input
+              class="volume-range volume-temperature"
+              type="range"
+              name=""
+              id=""
+            />
+          </div>
+        </div>
+        <div class="divider-sidebar-color-volume"></div>
+        <div class="inpostation-null-save">
+          <div class="null-save">
+            <button class="button-white">annulla</button>
+            <button class="button-blue">salva</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
