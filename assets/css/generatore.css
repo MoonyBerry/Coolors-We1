@@ -16,3 +16,31 @@
     bottom: 56px;
   }
 }
+
+div.success-copy-hexcode {
+  background-color: #000000;
+  color: white;
+  height: 50px;
+  width: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 25px;
+  font-size: 15px;
+  font-weight: 600;
+  z-index: 9999;
+  position: fixed;
+  bottom: 3%;
+  left: 50%;
+  transform: translate(-50%);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 8px 20px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0s linear 0.3s;
+}
+
+div.success-copy-hexcode.showMessage {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0s;
+}
