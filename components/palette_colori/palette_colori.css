@@ -112,6 +112,27 @@
   display: flex;
 }
 
+/*STATIC COLOR CONTAINER BACKGROUND*/
+.firstColorPalette {
+  background: #afdceb;
+}
+
+.secondColorPalette {
+  background: #cae9f5;
+}
+
+.thirdColorPalette {
+  background: #f0f8ff;
+}
+
+.fourthColorPalette {
+  background: #add8e6;
+}
+
+.fifthColorPalette {
+  background: #86c5d8;
+}
+
 @media screen and (max-width: 768px) {
   .palette-container {
     flex-direction: column;
