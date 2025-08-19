@@ -68,8 +68,10 @@ $heartOpenButton.forEach((heart) => {
 
     if (heartClicked.classList.contains("fa-regular")) {
       //ADDING HEXCODE TO COLOR INPUT VALUE (HEART MODAL)
-      const $colorContainerBackground =
-        document.querySelector("div.description h1").innerText;
+      const $colorContainerBackground = heart
+        .closest(".colorContainer") // salgo fino al contenitore della card
+        .querySelector("div.description h1").innerText;
+
       const $colorInputModalValue = document.querySelector("input#heart-color");
       if ($colorInputModalValue) {
         $colorInputModalValue.value = "#" + $colorContainerBackground;
