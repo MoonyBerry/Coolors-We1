@@ -1,0 +1,147 @@
+.container-modal-select-image {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  background: #ffffff;
+  flex-direction: column;
+  border-radius: 14px;
+  width: 468px;
+  height: 348px;
+  z-index: 50;
+  text-align: center;
+}
+.container-titolo-modal-select-image {
+  padding: 1rem;
+  display: flex;
+  height: 5%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.container-titolo-modal-select-image h1 {
+  width: 90%;
+  font-size: 16px;
+  padding-right: 55px;
+}
+.btnX-modal-selct-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  font-size: 14px;
+  height: 35px;
+  margin: 1rem;
+}
+.btnX-modal-selct-image:hover {
+  border-radius: 10px;
+  background: #f2f2f3;
+}
+.divider-modal-select-image {
+  border-bottom: solid 1px #ececec;
+  width: 100%;
+}
+
+.container-modal-select-image-option {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  gap: 1rem;
+  height: 5%;
+}
+
+.button-modal-select-image {
+  background: none;
+  border: none;
+  height: 51px;
+  border-bottom: 1px solid #ececec;
+  color: #88888f;
+  font-size: 15px;
+  font-weight: 400;
+  z-index: 50;
+}
+.button-modal-select-image:hover {
+  color: black;
+}
+/*  */
+.upload-box {
+  width: 90%;
+  height: 90%;
+  border: 2px dashed #d8d8da;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #777;
+  cursor: pointer;
+  transition: border-color 0.3s, background-color 0.3s;
+  margin: 1.5rem;
+}
+/*  */
+.upload-box:hover {
+  border-color: #999;
+}
+
+.upload-content .upload-icon {
+  font-size: 30px;
+  margin-bottom: 8px;
+}
+/*  */
+.url-box {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  display: none;
+}
+/*  */
+.url-box p {
+  width: 100%;
+  margin-left: 2rem;
+  margin-bottom: 0;
+  font-size: 13px;
+  font-weight: bold;
+  text-align: start;
+}
+.btn-modal-url {
+  border-radius: 10px;
+  height: 46px;
+  width: 90%;
+  font-size: 16px;
+  border: #999 1px solid;
+  padding-left: 1rem;
+}
+
+.input-url-box-text {
+  width: 86%;
+}
+
+.input-url-box-text:hover {
+  border-color: #777;
+}
+
+.btn-url-box-ok {
+  color: white;
+  font-weight: bold;
+  background: rgb(0, 102, 255);
+}
+.btn-url-box-ok:hover {
+  background: rgba(0, 102, 255, 0.872);
+}
+.webcam-box {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  height: 65%;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+.webcam-box img {
+  width: 40px;
+  height: 40px;
+}

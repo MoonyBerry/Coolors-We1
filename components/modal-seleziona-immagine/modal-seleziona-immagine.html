@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="../registrazioni-modal/modal_registrazione.css"
+    />
+    <link rel="stylesheet" href="modal-seleziona-immagine.css" />
+  </head>
+  <body>
+    <div class="overlay overlay-modal">
+      <div class="container-modal-select-image">
+        <div class="container-titolo-modal-select-image">
+          <div class="btnX-modal-selct-image">
+            <i class="fa-solid fa-x"></i>
+          </div>
+          <h1>Seleziona immagine</h1>
+        </div>
+        <div class="divider-modal-select-image"></div>
+        <div class="container-modal-select-image-option">
+          <button
+            class="button-modal-select-image btn-modal-select-image-upload"
+          >
+            Carica
+          </button>
+          <button class="button-modal-select-image modal-select-image-url">
+            URL
+          </button>
+          <button class="button-modal-select-image modal-select-image-camera">
+            Fotocamera
+          </button>
+          <button class="button-modal-select-image modal-select-image-stock">
+            Stock
+          </button>
+        </div>
+        <div class="divider-modal-select-image"></div>
+        <div class="upload-box">
+          <div class="upload-content">
+            <div class="upload-icon"><i class="fa-regular fa-image"></i></div>
+            <p>Sfoglia o trascina immagine</p>
+          </div>
+        </div>
+        <div class="url-box">
+          <p>URL immagine</p>
+          <input
+            class="btn-modal-url input-url-box-text"
+            type="text"
+            placeholder="https://"
+          />
+          <button class="btn-modal-url btn-url-box-ok">OK</button>
+        </div>
+        <div class="webcam-box">
+          <img src="../../assets/img/webcam.png" alt="webcam" />
+          <p>Accesso alla webcam negato</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
