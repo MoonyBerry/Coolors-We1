@@ -61,6 +61,16 @@ const $buttonTextSpan = document.querySelector(
 const $saveHeartModal = document.querySelector("button.heart-submit-button");
 let heartClicked = null;
 
+//LOCAL STORAGE
+function getFavoriteColors() {
+  const colors = localStorage.getItem("favoriteColors");
+  return colors ? JSON.parse(colors) : [];
+}
+
+function saveFavoriteColors(colors) {
+  localStorage.setItem("favoriteColors", JSON.stringify(colors));
+}
+
 //OPENING AND CLOSING HEART MODAL AND ERROR MODAL
 $heartOpenButton.forEach((heart) => {
   heart.addEventListener("click", () => {
@@ -102,10 +112,21 @@ $saveHeartModal.addEventListener("click", (event) => {
   //CLICK ON SAVE BUTTON
   if (!heartClicked) return;
 
+  const $colorInputModalValue = document.querySelector("input#heart-color");
+
   if (heartClicked.classList.contains("fa-regular")) {
     heartClicked.classList.remove("fa-regular");
     heartClicked.classList.add("fa-solid");
   }
+
+  //LOCAL STORAGE ADD FAVOURITE
+  const color = $colorInputModalValue.value;
+  const favorites = getFavoriteColors();
+  if (!favorites.includes(color)) {
+    favorites.push(color);
+    saveFavoriteColors(favorites);
+  }
+
   const $loadingIcon = $saveHeartModal
     .closest("div.heart-modal-container")
     .querySelector("i.fa-spinner.fa-spin");
@@ -162,6 +183,14 @@ $deleteColorButton.addEventListener("click", () => {
     $copyMessage.innerHTML = `<i class="fa-solid fa-circle-check" style="color: #ffffff"></i> Colore eliminato correttamente!`;
     $copyMessage.classList.add("showMessage");
 
+    //LOCAL STORAGE REMOVE FAVOURITE COLOR
+    const color = heartClicked
+      .closest(".colorContainer")
+      .querySelector("div.description h1").innerText;
+    let favorites = getFavoriteColors();
+    favorites = favorites.filter((c) => c !== "#" + color);
+    saveFavoriteColors(favorites);
+
     heartClicked.classList.remove("fa-solid");
     heartClicked.classList.add("fa-regular");
 
@@ -177,4 +206,18 @@ const $cancelErrorModal = document.querySelector("button.error-undo-color");
 $cancelErrorModal.addEventListener("click", () => {
   $heartModalOverlay.classList.remove("show");
   $heartRemoveColor.classList.remove("show");
+});
+
+//LOCAL STORAGE COLOR HEARTS ON PAGE LOAD
+document.addEventListener("DOMContentLoaded", () => {
+  const favorites = getFavoriteColors();
+
+  document.querySelectorAll("div.colorContainer").forEach((container) => {
+    const color = "#" + container.querySelector("div.description h1").innerText;
+    if (favorites.includes(color)) {
+      const heart = container.querySelector("div.icon.heart i.fa-heart");
+      heart.classList.remove("fa-regular");
+      heart.classList.add("fa-solid");
+    }
+  });
 });
