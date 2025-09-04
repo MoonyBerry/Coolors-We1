@@ -204,4 +204,7 @@
   i.fa-solid.fa-lock-open {
     transform: scaleX(-1);
   }
+  .palette-container.sideIsOpen {
+    width: 100%;
+  }
 }
