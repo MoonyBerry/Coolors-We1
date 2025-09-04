@@ -8,6 +8,7 @@
   gap: 20px;
   box-shadow: hsla(250, 3%, 0%, 0.075) 0 1px;
   background-color: white;
+  border-bottom: 1px solid #00000013;
 }
 
 .generator {
@@ -104,10 +105,20 @@
   cursor: pointer;
 }
 
+.tendon-container.rotate {
+  transform: rotate(90deg);
+  background: hsl(216, 100%, 95%);
+  border-radius: 5px;
+}
+
 .tendon {
   width: 15px;
-  height: 1px;
+  height: 1.5px;
   background-color: black;
+}
+
+.tendon.rotate {
+  background-color: #0066ff;
 }
 
 .dots-menu-container:hover,

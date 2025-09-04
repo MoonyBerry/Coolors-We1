@@ -1,0 +1,164 @@
+/* quando si aggiunge la classe show */
+aside.library-menu-sidebar.show {
+  min-width: 300px;
+  opacity: 1;
+}
+
+div.library-overlay-mobile.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/*LIBRARY SIDEBAR GENERAL RULES*/
+aside.library-menu-sidebar {
+  width: 0;
+  min-width: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: min-width 0.3s cubic-bezier(0.6, 0.4, 0, 1),
+    opacity 0.2s ease-in-out;
+  background: #fff;
+  font-size: 14px;
+}
+
+div.favourite-color-palette-wrapper {
+  width: 100%;
+  overflow: auto;
+}
+
+/*STYLING LIBRARY HEADER*/
+div.library-sidebar-header,
+div.library-body-title {
+  padding: 15px;
+  height: 47px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  box-shadow: hsla(250, 3%, 0%, 0.075) 0 1px;
+}
+
+div.library-header-section ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 46px;
+}
+
+div.library-header-section a {
+  padding: 0 6px;
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+}
+
+div.library-header-section ul li:nth-child(2) a {
+  color: #7d7c83;
+  transition: color 0.1s ease-in-out;
+}
+
+div.library-header-section ul li:nth-child(2) a:hover {
+  color: black;
+}
+
+div.library-header-add-button,
+.search-palette-button,
+.library-header-close-button {
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.library-header-close-button {
+  left: 8px;
+  right: 0;
+  display: none;
+}
+
+div.library-header-add-button:hover,
+div.library-body-title .search-palette-button:hover {
+  cursor: pointer;
+  background-color: rgba(172, 172, 172, 0.2);
+  border-radius: 5px;
+}
+
+/*STYLING LIBRARY BODY*/
+div.library-body-title {
+  justify-content: space-between;
+}
+
+div.library-sidebar-body {
+  height: calc(100% - 47px - 47px);
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  padding: 19px 18px 18px;
+}
+
+div.favourite-color-palette-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  margin-bottom: 5px;
+  height: 54px;
+  cursor: pointer;
+}
+
+div.favourite-color-palette {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  border-radius: 5px;
+  height: 34px;
+  overflow: hidden;
+}
+
+div.favourite-color-palette-background {
+  width: 100%;
+}
+
+div.favourite-color-palette-container h1 {
+  font-size: 10px;
+  font-weight: 550;
+  padding: 0 10px 0 5px;
+  margin-top: 5px;
+}
+
+@media screen and (max-width: 768px) {
+  aside.library-menu-sidebar.show {
+    width: 360px;
+    max-width: 360px;
+    z-index: 100;
+    position: absolute;
+    top: -60px;
+    bottom: -56px;
+    right: 0;
+  }
+
+  .library-header-close-button {
+    display: flex;
+  }
+
+  div.library-overlay-mobile {
+    width: 100%;
+    height: 100%;
+    background: rgba(72, 72, 72, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 25;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out;
+  }
+}

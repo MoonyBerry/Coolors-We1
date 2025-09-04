@@ -221,3 +221,224 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+//////////////////////////////////////////////////////////////////////
+
+//LIBRARY SIDEBAR MENU - SAVING FAVOURITE COLORS PALETTES
+//OPENING AND CLOSING SIDEBAR
+const $librarySidebar = document.querySelector("aside.library-menu-sidebar");
+const $librarySidebarOpenButton = document.querySelector(
+  "div.tendon-container"
+);
+const $navbarTendons = document.querySelectorAll("div.tendon");
+const $libraryOverlay = document.querySelector("div.library-overlay-mobile");
+
+$librarySidebarOpenButton.addEventListener("click", () => {
+  $librarySidebar.classList.toggle("show");
+  container.classList.toggle("sideIsOpen");
+  $libraryOverlay.classList.toggle("show");
+  $librarySidebarOpenButton.classList.toggle("rotate");
+  $navbarTendons.forEach((tendon) => {
+    tendon.classList.toggle("rotate");
+  });
+});
+
+//OPENING WISHLIST MODAL FROM ADD BUTTON
+const $libraryAddPaletteButton = document.querySelector(
+  "div.library-header-add-button"
+);
+const $wishlistModal = document.querySelector("div.wishlist-modal-container");
+const $wishlistOverlay = document.querySelector("div.wishlist-modal-overlay");
+
+document.addEventListener("DOMContentLoaded", () => {
+  $libraryAddPaletteButton.addEventListener("click", () => {
+    $wishlistModal.classList.add("show");
+    $wishlistOverlay.classList.add("show");
+  });
+});
+
+//CLOSING SIDE MOBILE
+const $closeLibrary = document.querySelector("div.library-header-close-button");
+
+document.addEventListener("DOMContentLoaded", () => {
+  $closeLibrary.addEventListener("click", () => {
+    $librarySidebar.classList.remove("show");
+    $libraryOverlay.classList.remove("show");
+    container.classList.remove("sideIsOpen");
+    $librarySidebarOpenButton.classList.remove("rotate");
+    $navbarTendons.forEach((tendon) => {
+      tendon.classList.remove("rotate");
+    });
+  });
+
+  $libraryOverlay.addEventListener("click", () => {
+    if ($librarySidebar.classList.contains("show")) {
+      $librarySidebar.classList.remove("show");
+      $libraryOverlay.classList.remove("show");
+      container.classList.remove("sideIsOpen");
+      $librarySidebarOpenButton.classList.remove("rotate");
+      $navbarTendons.forEach((tendon) => {
+        tendon.classList.remove("rotate");
+      });
+    }
+  });
+});
+
+//CONVERT RGB INTO HEXCODE
+const rgbToHex = function rgbToHex(rgb) {
+  //match pick numbers from rgb code string
+  const result = rgb.match(/\d+/g).map(Number);
+  //convert every hex number into 2 digit nummber
+  return (
+    "#" +
+    result
+      .map((val) => val.toString(16).padStart(2, "0"))
+      .join("")
+      .toUpperCase()
+  );
+};
+
+//RENDERING FAVOURITE PALETTES
+const $favouritePaletteContainer = document.querySelector(
+  "div.favourite-color-palette-wrapper"
+);
+
+function renderFavouritePalettes() {
+  $favouritePaletteContainer.innerHTML = "";
+
+  const favoritesSavedPalettes = getFavoritePalettes();
+
+  favoritesSavedPalettes.forEach((palette) => {
+    //create a main container for each palette
+    const $paletteContainer = document.createElement("div");
+    $paletteContainer.classList.add("favourite-color-palette-container");
+
+    //create container colors
+    const $colorsContainer = document.createElement("div");
+    $colorsContainer.classList.add("favourite-color-palette");
+
+    palette.colors.forEach((color) => {
+      const $colorContainer = document.createElement("div");
+      $colorContainer.classList.add("favourite-color-palette-background");
+      $colorContainer.style.backgroundColor = color;
+      $colorsContainer.appendChild($colorContainer);
+    });
+
+    //name palette
+    const $paletteName = document.createElement("h1");
+    $paletteName.textContent = palette.name;
+
+    //ading colors and name to main container
+    $paletteContainer.appendChild($colorsContainer);
+    $paletteContainer.appendChild($paletteName);
+
+    //adding to sidebar
+    $favouritePaletteContainer.appendChild($paletteContainer);
+
+    $paletteContainer.addEventListener("click", () => {
+      const $colorStrip = document.querySelectorAll("div.colorContainer");
+      for (let i = 0; i < palette.colors.length; i++) {
+        $colorStrip[i].style.backgroundColor = palette.colors[i];
+      }
+
+      $colorStrip.forEach((strip) => {
+        const $stripCode = strip.querySelector("div.description h1");
+        const $stripName = strip.querySelector("div.description p");
+
+        const stripBackground = getComputedStyle(strip).backgroundColor;
+        const hexCode = rgbToHex(stripBackground);
+        $stripCode.innerHTML = hexCode.slice(1);
+
+        //CHANGING DESCRIPTION WITH COLORNAME
+        const colorName = color2name.closest(hexCode).name;
+        $stripName.innerHTML = colorName[0].toUpperCase() + colorName.slice(1);
+      });
+    });
+  });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  renderFavouritePalettes();
+});
+
+//SAVING FAVOURITE PALETTES
+const $savePaletteButton = document.querySelector(
+  "button.wishlist-submit-button"
+);
+const $myPaletteNameInput = document.querySelector("input#wishlist-nome");
+const $paletteColors = document.querySelectorAll("div.colorContainer");
+
+//LOCAL STORAGE
+function getFavoritePalettes() {
+  const palettes = localStorage.getItem("favoritePalettes");
+  const parsedPalettes = palettes ? JSON.parse(palettes) : [];
+  return Array.isArray(parsedPalettes) ? parsedPalettes : [parsedPalettes];
+}
+
+function saveFavoritePalettes(palettes) {
+  localStorage.setItem("favoritePalettes", JSON.stringify(palettes));
+}
+
+//EVENT ON SAVE BUTTON CLICK
+$savePaletteButton.addEventListener("click", () => {
+  const $savePaletteButtonSpan = $savePaletteButton.querySelector("span");
+  const $loadingIcon = $savePaletteButton.querySelector("i.fa-spinner");
+
+  //SIMULATE LOADING
+  $savePaletteButtonSpan.style.display = "none";
+  $loadingIcon.style.display = "block";
+
+  //CLOSING MODAL AFTER 1 SECOND
+  setTimeout(() => {
+    $wishlistModal.classList.remove("show");
+    $wishlistOverlay.classList.remove("show");
+
+    $loadingIcon.style.display = "none";
+    $savePaletteButtonSpan.style.display = "inline-block";
+  }, 1000);
+
+  let paletteName = $myPaletteNameInput.value;
+
+  if (!paletteName) {
+    paletteName = "My new palette";
+  }
+
+  const colorPalette = [];
+  $paletteColors.forEach((div) => {
+    const paletteColor = getComputedStyle(div).backgroundColor;
+    if (paletteColor) {
+      colorPalette.push(paletteColor);
+    }
+  });
+
+  const favoritesPalettes = getFavoritePalettes();
+
+  const paletteAlreadyExists = favoritesPalettes.some(
+    (p) => JSON.stringify(p.colors) === JSON.stringify(colorPalette)
+  );
+
+  if (!paletteAlreadyExists) {
+    setTimeout(() => {
+      favoritesPalettes.push({ name: paletteName, colors: colorPalette });
+      saveFavoritePalettes(favoritesPalettes);
+
+      renderFavouritePalettes();
+
+      $copyMessage.innerHTML = `<i class="fa-solid fa-circle-check" style="color: #ffffff"></i> Palette salvata con successo!`;
+      $copyMessage.classList.add("showMessage");
+      setTimeout(() => {
+        $copyMessage.classList.remove("showMessage");
+      }, 3000);
+    }, 1000);
+  } else {
+    setTimeout(() => {
+      $copyMessage.innerHTML = `<i class="fa-solid fa-circle-check" style="color: #ffffff"></i> Errore, è già stata salvata! `;
+      $copyMessage.classList.add("showMessage");
+      setTimeout(() => {
+        $copyMessage.classList.remove("showMessage");
+      }, 3000);
+    }, 1000);
+  }
+
+  $myPaletteNameInput.value = "";
+});
