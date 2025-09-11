@@ -3,20 +3,28 @@ const container = document.querySelector(".palette-container");
 container.addEventListener("click", (event) => {
   // Trova il bottone cliccato
   const btn = event.target.closest(".divOpen");
+  if (!btn) return; // se non è stato cliccato un .divOpen, esci
 
-  // Trova il lucchetto associato nello stesso .colorContainer
+  // Trova il contenitore colore
   const colorContainer = btn.closest(".colorContainer");
+  if (!colorContainer) return;
+
+  // Trova il lucchetto
   const lock = colorContainer.querySelector(".lock");
+  if (!lock) return;
 
   // Toggle del singolo lucchetto
+  const optionContainer = btn.closest(".optionContainer");
+  if (!optionContainer) return;
+
   if (lock.classList.contains("fa-lock-open")) {
     lock.classList.remove("fa-lock-open");
     lock.classList.add("fa-lock");
-    btn.closest(".optionContainer").classList.add("lockVisible");
+    optionContainer.classList.add("lockVisible");
   } else {
     lock.classList.remove("fa-lock");
     lock.classList.add("fa-lock-open");
-    btn.closest(".optionContainer").classList.remove("lockVisible");
+    optionContainer.classList.remove("lockVisible");
   }
 });
 
@@ -226,6 +234,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 //LIBRARY SIDEBAR MENU - SAVING FAVOURITE COLORS PALETTES
 //OPENING AND CLOSING SIDEBAR
+const $containerSidebar = document.querySelector(".container-sidebar");
 const $librarySidebar = document.querySelector("aside.library-menu-sidebar");
 const $librarySidebarOpenButton = document.querySelector(
   "div.tendon-container"
@@ -241,6 +250,9 @@ $librarySidebarOpenButton.addEventListener("click", () => {
   $navbarTendons.forEach((tendon) => {
     tendon.classList.toggle("rotate");
   });
+  if ($containerSidebar.classList.contains("sideIsOpen")) {
+    $containerSidebar.classList.remove("sideIsOpen");
+  }
 });
 
 //OPENING WISHLIST MODAL FROM ADD BUTTON
@@ -442,3 +454,164 @@ $savePaletteButton.addEventListener("click", () => {
 
   $myPaletteNameInput.value = "";
 });
+//funzione drag and drop ancora da completare
+///////////////////////////////////////////////////////////////
+let dragSrc = null;
+
+function addDragAndButtonListeners() {
+  // Drag and drop
+  document.querySelectorAll(".colorContainer").forEach((colonna) => {
+    colonna.setAttribute("draggable", "true");
+    colonna.removeEventListener("dragstart", dragStart);
+    colonna.removeEventListener("dragend", dragEnd);
+    colonna.removeEventListener("dragover", dragOver);
+    colonna.removeEventListener("dragenter", dragEnter);
+    colonna.removeEventListener("dragleave", dragLeave);
+    colonna.removeEventListener("drop", drop);
+    colonna.addEventListener("dragstart", dragStart);
+    colonna.addEventListener("dragend", dragEnd);
+    colonna.addEventListener("dragover", dragOver);
+    colonna.addEventListener("dragenter", dragEnter);
+    colonna.addEventListener("dragleave", dragLeave);
+    colonna.addEventListener("drop", drop);
+  });
+
+  // Delete button
+  document.querySelectorAll(".deleteX").forEach((btn) => {
+    btn.removeEventListener("click", deleteColonna);
+    btn.addEventListener("click", deleteColonna);
+  });
+
+  // Plus button
+  document.querySelectorAll(".containerPlus").forEach((btn) => {
+    btn.removeEventListener("click", addColonna);
+    btn.addEventListener("click", addColonna);
+  });
+}
+
+function dragStart(e) {
+  dragSrc = this;
+  this.classList.add("dragging");
+}
+
+function dragEnd(e) {
+  this.classList.remove("dragging");
+  dragSrc = null;
+}
+
+function dragOver(e) {
+  e.preventDefault();
+}
+
+function dragEnter(e) {
+  e.preventDefault();
+  this.classList.add("over");
+}
+
+function dragLeave(e) {
+  this.classList.remove("over");
+}
+
+function drop(e) {
+  e.preventDefault();
+  this.classList.remove("over");
+  if (dragSrc && dragSrc !== this) {
+    // Scambia le posizioni
+    const parent = this.parentNode;
+    const srcNext =
+      dragSrc.nextSibling === this ? dragSrc : dragSrc.nextSibling;
+    parent.insertBefore(dragSrc, this);
+    parent.insertBefore(this, srcNext);
+    addDragAndButtonListeners(); // Riattacca i listener
+  }
+}
+
+function deleteColonna() {
+  const colonna = this.closest(".colorContainer");
+  const colonne = document.querySelectorAll(".colorContainer");
+  if (colonne.length > 2 && colonna) {
+    colonna.remove();
+    addDragAndButtonListeners();
+  }
+}
+
+function addColonna() {
+  const colonna = this.closest(".colorContainer");
+  const nuovaColonna = document.createElement("div");
+  nuovaColonna.classList.add("colorContainer");
+  // Genera colore random
+  const randomColor =
+    "#" +
+    Math.floor(Math.random() * 16777215)
+      .toString(16)
+      .padStart(6, "0")
+      .toUpperCase();
+  const hexCode = randomColor.slice(1);
+  nuovaColonna.style.backgroundColor = randomColor;
+  nuovaColonna.innerHTML += `
+        <div class="optionContainer">
+          <div class="icon deleteX"><i class="fa-solid fa-x"></i></div>
+          <div class="icon circle-half">
+            <i class="fa-solid fa-circle-half-stroke"></i>
+          </div>
+          <div class="icon bars"><i class="fa-solid fa-table-list"></i></div>
+          <div class="icon heart"><i class="fa-regular fa-heart"></i></div>
+          <div class="icon left-right" data-target="firstColorPalette">
+            <i class="fa-solid fa-arrows-left-right"></i>
+          </div>
+          <div class="icon clone"><i class="fa-solid fa-clone"></i></div>
+          <div class="icon divOpen">
+            <i class="fa-solid fa-lock-open lock"></i>
+          </div>
+        </div>
+        <div class="description">
+          <h1>${hexCode}</h1>
+          <p>Random</p>
+        </div>
+        <div class="containerPlus">
+          <div class="btnPlus"><i class="fa-solid fa-plus"></i></div>
+        </div>
+      `;
+  colonna.parentNode.insertBefore(nuovaColonna, colonna.nextSibling);
+  addDragAndButtonListeners();
+}
+
+// Inizializza i listener all'avvio
+addDragAndButtonListeners();
+
+// Spacebar cambia colore anche per nuovi elementi
+document.addEventListener("keydown", function (e) {
+  if (e.code === "Space") {
+    document.querySelectorAll(".colorContainer").forEach((div) => {
+      // Cambia colore random
+      const randomColor =
+        "#" +
+        Math.floor(Math.random() * 16777215)
+          .toString(16)
+          .padStart(6, "0")
+          .toUpperCase();
+      div.style.backgroundColor = randomColor;
+      const h1 = div.querySelector(".description h1");
+      if (h1) h1.textContent = randomColor.slice(1);
+      const p = div.querySelector(".description p");
+      if (p) p.textContent = "Random";
+    });
+  }
+});
+
+// elimina elemento con il btn X
+const $btnsDelete = document.querySelectorAll(".deleteX");
+
+$btnsDelete.forEach(($btnDelete) => {
+  $btnDelete.addEventListener("click", function () {
+    const colonna = this.closest(".colorContainer");
+
+    const colonne = document.querySelectorAll(".colorContainer");
+
+    if (colonne.length > 2 && colonna) {
+      colonna.remove();
+    }
+  });
+});
+
+// ...existing code...
