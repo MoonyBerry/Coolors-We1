@@ -568,6 +568,10 @@ function addColonna() {
           <div class="btnPlus"><i class="fa-solid fa-plus"></i></div>
         </div>
       `;
+  const descriptionP = nuovaColonna.querySelector(".description p");
+  const colorName = color2name.closest(randomColor).name;
+  descriptionP.textContent = colorName[0].toUpperCase() + colorName.slice(1);
+
   colonna.parentNode.insertBefore(nuovaColonna, colonna.nextSibling);
   addDragAndButtonListeners();
 }
@@ -590,7 +594,10 @@ document.addEventListener("keydown", function (e) {
       const h1 = div.querySelector(".description h1");
       if (h1) h1.textContent = randomColor.slice(1);
       const p = div.querySelector(".description p");
-      if (p) p.textContent = "Random";
+      if (p) {
+        const colorName = color2name.closest(randomColor).name;
+        p.textContent = colorName[0].toUpperCase() + colorName.slice(1);
+      }
     });
   }
 });
