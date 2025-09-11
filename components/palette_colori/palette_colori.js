@@ -28,37 +28,37 @@ container.addEventListener("click", (event) => {
   }
 });
 
-//COPY HEXCODE BUTTON
-const $copyButton = document.querySelectorAll(".icon.clone");
+//COPY HEXCODE BUTTON (sempre con event delegation)
 const $copyMessage = document.querySelector("div.success-copy-hexcode");
 
-$copyButton.forEach((copy) => {
-  copy.addEventListener("click", () => {
-    const container = copy.closest(".colorContainer");
-    const hexCode = "#" + container.querySelector(".description h1").innerHTML;
-    //TO COPY CODE TO CLIPBOARD
-    navigator.clipboard
-      .writeText(hexCode)
-      .then(() => {
-        $copyMessage.innerHTML = `<i class="fa-solid fa-circle-check" style="color: #ffffff"></i> Colore copiato negli appunti!`;
-        $copyMessage.classList.add("showMessage");
-        //REMOVING SHOWMESSAGE AFTER 3 SECONDS
-        setTimeout(() => {
-          $copyMessage.classList.remove("showMessage");
-        }, 3000);
-      })
-      .catch(() => {
-        $copyMessage.innerHTML = "Errore, codice inesistene";
-        $copyMessage.classList.add("showMessage");
-        setTimeout(() => {
-          $copyMessage.classList.remove("showMessage");
-        }, 3000);
-      });
-  });
+container.addEventListener("click", (event) => {
+  const copy = event.target.closest(".icon.clone"); // TROVA IL BOTTONE CLONE CLICCATO
+  if (!copy) return; // se non è un clone, esci
+
+  const containerDiv = copy.closest(".colorContainer"); // TROVA IL CONTAINER DEL COLORE
+  if (!containerDiv) return;
+  const hexCode = "#" + containerDiv.querySelector(".description h1").innerHTML;
+  //TO COPY CODE TO CLIPBOARD
+  navigator.clipboard
+    .writeText(hexCode)
+    .then(() => {
+      $copyMessage.innerHTML = `<i class="fa-solid fa-circle-check" style="color: #ffffff"></i> Colore copiato negli appunti!`;
+      $copyMessage.classList.add("showMessage");
+      //REMOVING SHOWMESSAGE AFTER 3 SECONDS
+      setTimeout(() => {
+        $copyMessage.classList.remove("showMessage");
+      }, 3000);
+    })
+    .catch(() => {
+      $copyMessage.innerHTML = "Errore, codice inesistene";
+      $copyMessage.classList.add("showMessage");
+      setTimeout(() => {
+        $copyMessage.classList.remove("showMessage");
+      }, 3000);
+    });
 });
 
-//SAVE COLOR WITH HEART BUTTON
-const $heartOpenButton = document.querySelectorAll("div.icon.heart");
+//SAVE COLOR WITH HEART BUTTON (event delegation per le colonne di colore create dinamicamente con il plus button)
 const $heartModal = document.querySelector("div.heart-modal-container");
 const $heartCloseButton = document.querySelectorAll("div.close-heart-modal");
 const $heartModalOverlay = document.querySelector("div.heart-modal-overlay");
@@ -80,28 +80,28 @@ function saveFavoriteColors(colors) {
 }
 
 //OPENING AND CLOSING HEART MODAL AND ERROR MODAL
-$heartOpenButton.forEach((heart) => {
-  heart.addEventListener("click", () => {
-    heartClicked = heart.querySelector("i.fa-heart");
+container.addEventListener("click", (event) => {
+  const heart = event.target.closest("div.icon.heart");
+  if (!heart) return;
+  heartClicked = heart.querySelector("i.fa-heart");
 
-    if (heartClicked.classList.contains("fa-regular")) {
-      //ADDING HEXCODE TO COLOR INPUT VALUE (HEART MODAL)
-      const $colorContainerBackground = heart
-        .closest(".colorContainer") // salgo fino al contenitore della card
-        .querySelector("div.description h1").innerText;
+  if (heartClicked.classList.contains("fa-regular")) {
+    //ADDING HEXCODE TO COLOR INPUT VALUE (HEART MODAL)
+    const $colorContainerBackground = heart
+      .closest(".colorContainer") // salgo fino al contenitore della card
+      .querySelector("div.description h1").innerText;
 
-      const $colorInputModalValue = document.querySelector("input#heart-color");
-      if ($colorInputModalValue) {
-        $colorInputModalValue.value = "#" + $colorContainerBackground;
-      }
-
-      $heartModal.classList.add("show");
-      $heartModalOverlay.classList.add("show");
-    } else {
-      $heartRemoveColor.classList.add("show");
-      $heartModalOverlay.classList.add("show");
+    const $colorInputModalValue = document.querySelector("input#heart-color");
+    if ($colorInputModalValue) {
+      $colorInputModalValue.value = "#" + $colorContainerBackground;
     }
-  });
+
+    $heartModal.classList.add("show");
+    $heartModalOverlay.classList.add("show");
+  } else {
+    $heartRemoveColor.classList.add("show");
+    $heartModalOverlay.classList.add("show");
+  }
 });
 
 //CLOSING
@@ -409,14 +409,10 @@ $savePaletteButton.addEventListener("click", () => {
     $savePaletteButtonSpan.style.display = "inline-block";
   }, 1000);
 
-  let paletteName = $myPaletteNameInput.value;
-
-  if (!paletteName) {
-    paletteName = "My new palette";
-  }
+  let paletteName = $myPaletteNameInput.value || "My new palette";
 
   const colorPalette = [];
-  $paletteColors.forEach((div) => {
+  document.querySelectorAll(".colorContainer").forEach((div) => {
     const paletteColor = getComputedStyle(div).backgroundColor;
     if (paletteColor) {
       colorPalette.push(paletteColor);

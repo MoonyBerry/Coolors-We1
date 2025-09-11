@@ -23,20 +23,26 @@
 .option-sidebar-color-volume-container {
   display: flex;
   flex-direction: column;
-  gap: 7px;
-  height: 80%;
+  gap: 10px;
+  height: calc(100% - 56px - 76px);
   padding: 24px;
 }
 
 .section-sidebar-volume {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 12px;
 }
 
 .number-volume {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+.number-volume span {
+  font-size: 13px;
+  font-weight: 600;
 }
 
 .divider-sidebar-color-volume {
@@ -47,32 +53,40 @@
 .title-sidebar-color-volume {
   display: flex;
   font-size: 15px;
-  font-weight: bold;
+  font-weight: 600;
   flex-direction: column;
-  height: 56px;
+  height: 56.12px;
   justify-content: center;
   text-align: center;
 }
 .null-save {
-  padding: 24px;
   gap: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
 }
 
 .number-volume > input {
-  width: 13%;
-  border-radius: 8px;
+  width: 40px;
+  height: 26px;
+  border-radius: 6px;
+  border: 1px solid lightgray;
+  padding: 0 10px;
+  text-align: center;
+  font-size: 11px;
 }
 
 .button-white {
   background-color: rgb(244, 238, 238);
   height: 36px;
-  font-size: 18px;
+  font-size: 14px;
+  font-family: inherit;
+  font-weight: 600;
   border-color: transparent;
-  padding: 5px 30px;
-  border-radius: 5px;
+  padding: 0px 12px;
+  border-radius: 8px;
+  width: 100%;
 }
 .button-white:hover {
   background-color: rgb(229, 223, 223);
@@ -83,10 +97,13 @@
   background-color: rgb(0, 102, 255);
   color: white;
   height: 36px;
-  font-size: 18px;
+  font-size: 14px;
+  font-family: inherit;
   border-color: transparent;
-  padding: 5px 30px;
-  border-radius: 5px;
+  padding: 0px 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  width: 100%;
 }
 .button-blue:hover {
   background-color: rgba(0, 102, 255, 0.872);
@@ -94,15 +111,16 @@
 }
 
 .inpostation-null-save {
-  height: 10%;
+  height: 76px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 24px;
+  padding: 20px;
+  width: 100%;
 }
 
 .volume-range {
-  -webkit-appearance: none;
+  appearance: none;
   width: 250px;
   height: 10px;
   border-radius: 999px;
