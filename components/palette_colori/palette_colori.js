@@ -3,54 +3,62 @@ const container = document.querySelector(".palette-container");
 container.addEventListener("click", (event) => {
   // Trova il bottone cliccato
   const btn = event.target.closest(".divOpen");
+  if (!btn) return; // se non è stato cliccato un .divOpen, esci
 
-  // Trova il lucchetto associato nello stesso .colorContainer
+  // Trova il contenitore colore
   const colorContainer = btn.closest(".colorContainer");
+  if (!colorContainer) return;
+
+  // Trova il lucchetto
   const lock = colorContainer.querySelector(".lock");
+  if (!lock) return;
 
   // Toggle del singolo lucchetto
+  const optionContainer = btn.closest(".optionContainer");
+  if (!optionContainer) return;
+
   if (lock.classList.contains("fa-lock-open")) {
     lock.classList.remove("fa-lock-open");
     lock.classList.add("fa-lock");
-    btn.closest(".optionContainer").classList.add("lockVisible");
+    optionContainer.classList.add("lockVisible");
   } else {
     lock.classList.remove("fa-lock");
     lock.classList.add("fa-lock-open");
-    btn.closest(".optionContainer").classList.remove("lockVisible");
+    optionContainer.classList.remove("lockVisible");
   }
 });
 
-//COPY HEXCODE BUTTON
-const $copyButton = document.querySelectorAll(".icon.clone");
+//COPY HEXCODE BUTTON (sempre con event delegation)
 const $copyMessage = document.querySelector("div.success-copy-hexcode");
 
-$copyButton.forEach((copy) => {
-  copy.addEventListener("click", () => {
-    const container = copy.closest(".colorContainer");
-    const hexCode = "#" + container.querySelector(".description h1").innerHTML;
-    //TO COPY CODE TO CLIPBOARD
-    navigator.clipboard
-      .writeText(hexCode)
-      .then(() => {
-        $copyMessage.innerHTML = `<i class="fa-solid fa-circle-check" style="color: #ffffff"></i> Colore copiato negli appunti!`;
-        $copyMessage.classList.add("showMessage");
-        //REMOVING SHOWMESSAGE AFTER 3 SECONDS
-        setTimeout(() => {
-          $copyMessage.classList.remove("showMessage");
-        }, 3000);
-      })
-      .catch(() => {
-        $copyMessage.innerHTML = "Errore, codice inesistene";
-        $copyMessage.classList.add("showMessage");
-        setTimeout(() => {
-          $copyMessage.classList.remove("showMessage");
-        }, 3000);
-      });
-  });
+container.addEventListener("click", (event) => {
+  const copy = event.target.closest(".icon.clone"); // TROVA IL BOTTONE CLONE CLICCATO
+  if (!copy) return; // se non è un clone, esci
+
+  const containerDiv = copy.closest(".colorContainer"); // TROVA IL CONTAINER DEL COLORE
+  if (!containerDiv) return;
+  const hexCode = "#" + containerDiv.querySelector(".description h1").innerHTML;
+  //TO COPY CODE TO CLIPBOARD
+  navigator.clipboard
+    .writeText(hexCode)
+    .then(() => {
+      $copyMessage.innerHTML = `<i class="fa-solid fa-circle-check" style="color: #ffffff"></i> Colore copiato negli appunti!`;
+      $copyMessage.classList.add("showMessage");
+      //REMOVING SHOWMESSAGE AFTER 3 SECONDS
+      setTimeout(() => {
+        $copyMessage.classList.remove("showMessage");
+      }, 3000);
+    })
+    .catch(() => {
+      $copyMessage.innerHTML = "Errore, codice inesistene";
+      $copyMessage.classList.add("showMessage");
+      setTimeout(() => {
+        $copyMessage.classList.remove("showMessage");
+      }, 3000);
+    });
 });
 
-//SAVE COLOR WITH HEART BUTTON
-const $heartOpenButton = document.querySelectorAll("div.icon.heart");
+//SAVE COLOR WITH HEART BUTTON (event delegation per le colonne di colore create dinamicamente con il plus button)
 const $heartModal = document.querySelector("div.heart-modal-container");
 const $heartCloseButton = document.querySelectorAll("div.close-heart-modal");
 const $heartModalOverlay = document.querySelector("div.heart-modal-overlay");
@@ -72,28 +80,28 @@ function saveFavoriteColors(colors) {
 }
 
 //OPENING AND CLOSING HEART MODAL AND ERROR MODAL
-$heartOpenButton.forEach((heart) => {
-  heart.addEventListener("click", () => {
-    heartClicked = heart.querySelector("i.fa-heart");
+container.addEventListener("click", (event) => {
+  const heart = event.target.closest("div.icon.heart");
+  if (!heart) return;
+  heartClicked = heart.querySelector("i.fa-heart");
 
-    if (heartClicked.classList.contains("fa-regular")) {
-      //ADDING HEXCODE TO COLOR INPUT VALUE (HEART MODAL)
-      const $colorContainerBackground = heart
-        .closest(".colorContainer") // salgo fino al contenitore della card
-        .querySelector("div.description h1").innerText;
+  if (heartClicked.classList.contains("fa-regular")) {
+    //ADDING HEXCODE TO COLOR INPUT VALUE (HEART MODAL)
+    const $colorContainerBackground = heart
+      .closest(".colorContainer") // salgo fino al contenitore della card
+      .querySelector("div.description h1").innerText;
 
-      const $colorInputModalValue = document.querySelector("input#heart-color");
-      if ($colorInputModalValue) {
-        $colorInputModalValue.value = "#" + $colorContainerBackground;
-      }
-
-      $heartModal.classList.add("show");
-      $heartModalOverlay.classList.add("show");
-    } else {
-      $heartRemoveColor.classList.add("show");
-      $heartModalOverlay.classList.add("show");
+    const $colorInputModalValue = document.querySelector("input#heart-color");
+    if ($colorInputModalValue) {
+      $colorInputModalValue.value = "#" + $colorContainerBackground;
     }
-  });
+
+    $heartModal.classList.add("show");
+    $heartModalOverlay.classList.add("show");
+  } else {
+    $heartRemoveColor.classList.add("show");
+    $heartModalOverlay.classList.add("show");
+  }
 });
 
 //CLOSING
@@ -226,6 +234,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 //LIBRARY SIDEBAR MENU - SAVING FAVOURITE COLORS PALETTES
 //OPENING AND CLOSING SIDEBAR
+const $containerSidebar = document.querySelector(".container-sidebar");
 const $librarySidebar = document.querySelector("aside.library-menu-sidebar");
 const $librarySidebarOpenButton = document.querySelector(
   "div.tendon-container"
@@ -241,6 +250,9 @@ $librarySidebarOpenButton.addEventListener("click", () => {
   $navbarTendons.forEach((tendon) => {
     tendon.classList.toggle("rotate");
   });
+  if ($containerSidebar.classList.contains("sideIsOpen")) {
+    $containerSidebar.classList.remove("sideIsOpen");
+  }
 });
 
 //OPENING WISHLIST MODAL FROM ADD BUTTON
@@ -397,14 +409,10 @@ $savePaletteButton.addEventListener("click", () => {
     $savePaletteButtonSpan.style.display = "inline-block";
   }, 1000);
 
-  let paletteName = $myPaletteNameInput.value;
-
-  if (!paletteName) {
-    paletteName = "My new palette";
-  }
+  let paletteName = $myPaletteNameInput.value || "My new palette";
 
   const colorPalette = [];
-  $paletteColors.forEach((div) => {
+  document.querySelectorAll(".colorContainer").forEach((div) => {
     const paletteColor = getComputedStyle(div).backgroundColor;
     if (paletteColor) {
       colorPalette.push(paletteColor);
@@ -442,3 +450,171 @@ $savePaletteButton.addEventListener("click", () => {
 
   $myPaletteNameInput.value = "";
 });
+//funzione drag and drop ancora da completare
+///////////////////////////////////////////////////////////////
+let dragSrc = null;
+
+function addDragAndButtonListeners() {
+  // Drag and drop
+  document.querySelectorAll(".colorContainer").forEach((colonna) => {
+    colonna.setAttribute("draggable", "true");
+    colonna.removeEventListener("dragstart", dragStart);
+    colonna.removeEventListener("dragend", dragEnd);
+    colonna.removeEventListener("dragover", dragOver);
+    colonna.removeEventListener("dragenter", dragEnter);
+    colonna.removeEventListener("dragleave", dragLeave);
+    colonna.removeEventListener("drop", drop);
+    colonna.addEventListener("dragstart", dragStart);
+    colonna.addEventListener("dragend", dragEnd);
+    colonna.addEventListener("dragover", dragOver);
+    colonna.addEventListener("dragenter", dragEnter);
+    colonna.addEventListener("dragleave", dragLeave);
+    colonna.addEventListener("drop", drop);
+  });
+
+  // Delete button
+  document.querySelectorAll(".deleteX").forEach((btn) => {
+    btn.removeEventListener("click", deleteColonna);
+    btn.addEventListener("click", deleteColonna);
+  });
+
+  // Plus button
+  document.querySelectorAll(".containerPlus").forEach((btn) => {
+    btn.removeEventListener("click", addColonna);
+    btn.addEventListener("click", addColonna);
+  });
+}
+
+function dragStart(e) {
+  dragSrc = this;
+  this.classList.add("dragging");
+}
+
+function dragEnd(e) {
+  this.classList.remove("dragging");
+  dragSrc = null;
+}
+
+function dragOver(e) {
+  e.preventDefault();
+}
+
+function dragEnter(e) {
+  e.preventDefault();
+  this.classList.add("over");
+}
+
+function dragLeave(e) {
+  this.classList.remove("over");
+}
+
+function drop(e) {
+  e.preventDefault();
+  this.classList.remove("over");
+  if (dragSrc && dragSrc !== this) {
+    // Scambia le posizioni
+    const parent = this.parentNode;
+    const srcNext =
+      dragSrc.nextSibling === this ? dragSrc : dragSrc.nextSibling;
+    parent.insertBefore(dragSrc, this);
+    parent.insertBefore(this, srcNext);
+    addDragAndButtonListeners(); // Riattacca i listener
+  }
+}
+
+function deleteColonna() {
+  const colonna = this.closest(".colorContainer");
+  const colonne = document.querySelectorAll(".colorContainer");
+  if (colonne.length > 2 && colonna) {
+    colonna.remove();
+    addDragAndButtonListeners();
+  }
+}
+
+function addColonna() {
+  const colonna = this.closest(".colorContainer");
+  const nuovaColonna = document.createElement("div");
+  nuovaColonna.classList.add("colorContainer");
+  // Genera colore random
+  const randomColor =
+    "#" +
+    Math.floor(Math.random() * 16777215)
+      .toString(16)
+      .padStart(6, "0")
+      .toUpperCase();
+  const hexCode = randomColor.slice(1);
+  nuovaColonna.style.backgroundColor = randomColor;
+  nuovaColonna.innerHTML += `
+        <div class="optionContainer">
+          <div class="icon deleteX"><i class="fa-solid fa-x"></i></div>
+          <div class="icon circle-half">
+            <i class="fa-solid fa-circle-half-stroke"></i>
+          </div>
+          <div class="icon bars"><i class="fa-solid fa-table-list"></i></div>
+          <div class="icon heart"><i class="fa-regular fa-heart"></i></div>
+          <div class="icon left-right" data-target="firstColorPalette">
+            <i class="fa-solid fa-arrows-left-right"></i>
+          </div>
+          <div class="icon clone"><i class="fa-solid fa-clone"></i></div>
+          <div class="icon divOpen">
+            <i class="fa-solid fa-lock-open lock"></i>
+          </div>
+        </div>
+        <div class="description">
+          <h1>${hexCode}</h1>
+          <p>Random</p>
+        </div>
+        <div class="containerPlus">
+          <div class="btnPlus"><i class="fa-solid fa-plus"></i></div>
+        </div>
+      `;
+  const descriptionP = nuovaColonna.querySelector(".description p");
+  const colorName = color2name.closest(randomColor).name;
+  descriptionP.textContent = colorName[0].toUpperCase() + colorName.slice(1);
+
+  colonna.parentNode.insertBefore(nuovaColonna, colonna.nextSibling);
+  addDragAndButtonListeners();
+}
+
+// Inizializza i listener all'avvio
+addDragAndButtonListeners();
+
+// Spacebar cambia colore anche per nuovi elementi
+document.addEventListener("keydown", function (e) {
+  if (e.code === "Space") {
+    document.querySelectorAll(".colorContainer").forEach((div) => {
+      // Cambia colore random
+      const randomColor =
+        "#" +
+        Math.floor(Math.random() * 16777215)
+          .toString(16)
+          .padStart(6, "0")
+          .toUpperCase();
+      div.style.backgroundColor = randomColor;
+      const h1 = div.querySelector(".description h1");
+      if (h1) h1.textContent = randomColor.slice(1);
+      const p = div.querySelector(".description p");
+      if (p) {
+        const colorName = color2name.closest(randomColor).name;
+        p.textContent = colorName[0].toUpperCase() + colorName.slice(1);
+      }
+    });
+  }
+});
+
+// elimina elemento con il btn X
+const $btnsDelete = document.querySelectorAll(".deleteX");
+
+$btnsDelete.forEach(($btnDelete) => {
+  $btnDelete.addEventListener("click", function () {
+    const colonna = this.closest(".colorContainer");
+
+    const colonne = document.querySelectorAll(".colorContainer");
+
+    if (colonne.length > 2 && colonna) {
+      colonna.remove();
+    }
+  });
+});
+
+// ...existing code...
