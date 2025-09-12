@@ -6,7 +6,6 @@
   width: 0;
   min-width: 0;
   overflow: hidden;
-  background: rgb(0, 128, 255);
   opacity: 0;
   transition: min-width 0.3s cubic-bezier(0.6, 0.4, 0, 1),
     opacity 0.2s ease-in-out;
