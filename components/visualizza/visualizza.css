@@ -64,7 +64,7 @@
   border-bottom: 1px solid grey;
   overflow-y: scroll;
 }
-.main-options p {
+.visualizza-main-options p {
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -97,15 +97,15 @@
   background-color: black;
   flex-direction: row;
 }
-.first {
+.color-cage.first {
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
 }
-.last {
+.color-cage.last {
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
 }
-p:hover {
+.visualizza-main-options p:hover {
   width: 100%;
   background-color: rgb(235, 234, 234);
   border-radius: 10px;

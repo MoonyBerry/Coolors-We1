@@ -2,10 +2,8 @@ const $btnSideColorVolume = document.querySelector(".btn-side-color-volume");
 const $containerSidebar = document.querySelector(".container-sidebar");
 const $paletteContainer = document.querySelector(".palette-container");
 const $library = document.querySelector(".library-menu-sidebar");
-const $paletteOpen = document.querySelector(".palette-container");
 const $librarySideBtn = document.querySelector(".tendon-container");
 const $tendonRotate = document.querySelectorAll(".tendon");
-const $container = document.querySelector(".palette-container");
 const $libraryOverlayMobile = document.querySelector(".library-overlay-mobile");
 
 $btnSideColorVolume.addEventListener("click", () => {
