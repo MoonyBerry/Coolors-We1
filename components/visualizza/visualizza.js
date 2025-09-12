@@ -2,15 +2,6 @@ const $openBtn = document.querySelector(".navbar-functionality");
 const $closeBtn = document.querySelector(".fa-solid fa-xmark");
 const $modal = document.querySelector(".global-container");
 
-/* // Chiudi la modal
-$closeBtn.addEventListener("click", () => {
-  $closeBtn.classList.remove("show");
-}); */
-
-/* // Elementi
-const openBtn = document.getElementById("openModal");
-const modal = document.getElementById("myModal");
-const closeBtn = document.querySelector(".close"); */
 
 // Apri modal
 $openBtn.addEventListener("click", () => {
