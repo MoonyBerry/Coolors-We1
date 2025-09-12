@@ -1,5 +1,5 @@
 const $openBtn = document.querySelector(".dots-menu-container");
-const $closeBtn = document.querySelector("");
+const $closeBtn = document.querySelector(".dots-menu-container");
 const $modal = document.querySelector(".container-of-the-container");
 
 
