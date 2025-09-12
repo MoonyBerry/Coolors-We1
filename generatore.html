@@ -373,7 +373,7 @@
 
           <span class="divider divider-undo-redo"></span>
 
-          <a class="navbar-functionality openVisualizza" href="#"
+          <a class="navbar-functionality open-visualizza" href="#"
             ><svg
               class="navbar-functionality-img"
               width="40"
@@ -389,6 +389,44 @@
             </svg>
             <span class="functionality-text"> Visualizza</span>
           </a>
+          <!-- Visualizza modal -->
+          <div class="visualizza-modal-container">
+            <div class="global-container">
+              <div class="title-header">
+                <i class="fa-solid fa-xmark"></i>
+                <h1>Anteprima rapida</h1>
+                <div class="three-dots-menu">
+                  <div class="menu-dots-view"></div>
+                  <div class="menu-dots-view"></div>
+                  <div class="menu-dots-view"></div>
+                </div>
+              </div>
+              <div class="main-options">
+                <p>HEX</p>
+
+                <p>HSB</p>
+
+                <p>HSL</p>
+
+                <p>RGB</p>
+
+                <p>CMYK</p>
+
+                <p>LAB</p>
+              </div>
+              <div class="color-selection">
+                <div class="cage-container">
+                  <div class="color-cage first"></div>
+                  <div class="color-cage"></div>
+                  <div class="color-cage"></div>
+                  <div class="color-cage"></div>
+                  <div class="color-cage last"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="overlayModalVisualizza"></div>
+
           <a class="navbar-functionality openEsporta" href="#"
             ><svg
               class="navbar-functionality-img"
@@ -409,6 +447,7 @@
             </svg>
             <span class="functionality-text"> Esporta</span>
           </a>
+
           <!--------------------ESPORTA MODAL----------------------->
           <div class="esporta-modal-container">
             <!--------------------CLOSE MODAL SVG----------------------->
@@ -463,6 +502,7 @@
                   alt="icona immagine"
                 />Immagine</a
               >
+
               <a class="esporta-link" href="#"
                 ><img
                   src="assets/img/css-icon.svg"
