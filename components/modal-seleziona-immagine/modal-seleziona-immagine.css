@@ -1,5 +1,14 @@
+.container-modal-select-image.is-visible {
+  display: flex;
+}
+
+.overlay-modal.is-visible {
+  display: block;
+}
+.overlay-modal {
+  display: none;
+}
 .container-modal-select-image {
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: start;
@@ -7,31 +16,39 @@
   flex-direction: column;
   border-radius: 14px;
   width: 468px;
-  height: 348px;
+  height: 344px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   z-index: 50;
   text-align: center;
+  display: none;
 }
 .container-titolo-modal-select-image {
   padding: 1rem;
   display: flex;
-  height: 5%;
+  height: 46px;
   width: 100%;
   align-items: center;
   justify-content: center;
 }
 .container-titolo-modal-select-image h1 {
-  width: 90%;
+  width: 100%;
   font-size: 16px;
-  padding-right: 55px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
 }
 .btnX-modal-selct-image {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 40px;
+  height: 40px;
   font-size: 14px;
-  height: 35px;
-  margin: 1rem;
+  position: fixed;
+  top: 4px;
+  left: 8px;
 }
 .btnX-modal-selct-image:hover {
   border-radius: 10px;
@@ -48,17 +65,16 @@
   align-items: center;
   padding: 1rem;
   gap: 1rem;
-  height: 5%;
+  height: 56px;
 }
 
 .button-modal-select-image {
   background: none;
   border: none;
-  height: 51px;
-  border-bottom: 1px solid #ececec;
+  height: 56px;
   color: #88888f;
   font-size: 15px;
-  font-weight: 400;
+  font-weight: 500;
   z-index: 50;
 }
 .button-modal-select-image:hover {
@@ -67,8 +83,8 @@
 /*  */
 .upload-box {
   width: 90%;
-  height: 90%;
-  border: 2px dashed #d8d8da;
+  height: 240px;
+  border: 2px dashed #e3e3e7;
   border-radius: 14px;
   display: flex;
   align-items: center;
@@ -78,6 +94,7 @@
   cursor: pointer;
   transition: border-color 0.3s, background-color 0.3s;
   margin: 1.5rem;
+  font-size: 14px;
 }
 /*  */
 .upload-box:hover {
@@ -96,12 +113,11 @@
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  display: none;
+  padding-top: 3rem;
 }
 /*  */
 .url-box p {
-  width: 100%;
-  margin-left: 2rem;
+  width: 90%;
   margin-bottom: 0;
   font-size: 13px;
   font-weight: bold;
@@ -117,7 +133,7 @@
 }
 
 .input-url-box-text {
-  width: 86%;
+  width: 90%;
 }
 
 .input-url-box-text:hover {
@@ -139,9 +155,18 @@
   height: 65%;
   align-items: center;
   justify-content: center;
-  display: none;
 }
 .webcam-box img {
   width: 40px;
   height: 40px;
+}
+
+.active-btn-modal-select-image {
+  color: #0066ff;
+  border-bottom: 1px solid #0066ff;
+  z-index: 50;
+}
+
+.unactive-main-modal {
+  display: flex;
 }

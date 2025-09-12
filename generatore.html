@@ -199,7 +199,7 @@
      
 
           <span class="divider no-mobile"></span>
-          <a class="hoverLink" href="#"
+          <a class="hoverLink btn-modal-select-image-secondary-navbar" href="#"
             ><svg
               class="img-secondary"
               width="43"
@@ -311,7 +311,7 @@
             </svg>
           </a>
 
-          <a class="hoverLink" href="#"
+          <a class="hoverLink btn-side-color-volume" href="#"
             ><svg
               class="img-secondary"
               width="39"
@@ -476,6 +476,65 @@
             </svg>
             <span class="functionality-text"> Esporta</span>
           </a>
+          <!--------------------MODAL SELEZIONA IMMAGINE ---------------------->
+          <div class="container-modal-select-image">
+            <div class="container-titolo-modal-select-image">
+              <div class="btnX-modal-selct-image">
+                <i class="fa-solid fa-x"></i>
+              </div>
+              <h1>Seleziona immagine</h1>
+            </div>
+            <div class="divider-modal-select-image"></div>
+            <div class="container-modal-select-image-option">
+              <button
+                class="button-modal-select-image btn-modal-select-image-upload active-btn-modal-select-image"
+                data-target="upload-box"
+              >
+                Carica
+              </button>
+              <button
+                class="button-modal-select-image modal-select-image-url"
+                data-target="url-box"
+              >
+                URL
+              </button>
+              <button
+                class="button-modal-select-image modal-select-image-camera"
+                data-target="webcam-box"
+              >
+                Fotocamera
+              </button>
+              <button
+                disabled
+                class="button-modal-select-image modal-select-image-stock"
+              >
+                Stock
+              </button>
+            </div>
+            <div class="divider-modal-select-image"></div>
+            <div class="upload-box box-main">
+              <div class="upload-content">
+                <div class="upload-icon">
+                  <i class="fa-regular fa-image"></i>
+                </div>
+                <p>Sfoglia o trascina immagine</p>
+              </div>
+            </div>
+            <div class="url-box box-main" style="display: none">
+              <p>URL immagine</p>
+              <input
+                class="btn-modal-url input-url-box-text"
+                type="text"
+                placeholder="https://"
+              />
+              <button class="btn-modal-url btn-url-box-ok">OK</button>
+            </div>
+            <div class="webcam-box box-main" style="display: none">
+              <img src="assets/img/webcam.png" alt="webcam" />
+              <p>Accesso alla webcam negato</p>
+            </div>
+          </div>
+          <div class="overlay overlay-modal"></div>
 
          
 
@@ -708,13 +767,13 @@
         <!--  -->
         <div class="colorContainer firstColorPalette">
           <div class="optionContainer">
-            <div class="icon x"><i class="fa-solid fa-x"></i></div>
+            <div class="icon deleteX"><i class="fa-solid fa-x"></i></div>
             <div class="icon circle-half">
               <i class="fa-solid fa-circle-half-stroke"></i>
             </div>
             <div class="icon bars"><i class="fa-solid fa-table-list"></i></div>
             <div class="icon heart"><i class="fa-regular fa-heart"></i></div>
-            <div class="icon left-right">
+            <div class="icon left-right" data-target="firstColorPalette">
               <i class="fa-solid fa-arrows-left-right"></i>
             </div>
             <div class="icon clone"><i class="fa-solid fa-clone"></i></div>
@@ -733,13 +792,13 @@
         <!--  -->
         <div class="colorContainer secondColorPalette">
           <div class="optionContainer">
-            <div class="icon x"><i class="fa-solid fa-x"></i></div>
+            <div class="icon deleteX"><i class="fa-solid fa-x"></i></div>
             <div class="icon circle-half">
               <i class="fa-solid fa-circle-half-stroke"></i>
             </div>
             <div class="icon bars"><i class="fa-solid fa-table-list"></i></div>
             <div class="icon heart"><i class="fa-regular fa-heart"></i></div>
-            <div class="icon left-right">
+            <div class="icon left-right" data-target="secondColorPalette">
               <i class="fa-solid fa-arrows-left-right"></i>
             </div>
             <div class="icon clone"><i class="fa-solid fa-clone"></i></div>
@@ -758,13 +817,13 @@
 
         <div class="colorContainer thirdColorPalette">
           <div class="optionContainer">
-            <div class="icon x"><i class="fa-solid fa-x"></i></div>
+            <div class="icon deleteX"><i class="fa-solid fa-x"></i></div>
             <div class="icon circle-half">
               <i class="fa-solid fa-circle-half-stroke"></i>
             </div>
             <div class="icon bars"><i class="fa-solid fa-table-list"></i></div>
             <div class="icon heart"><i class="fa-regular fa-heart"></i></div>
-            <div class="icon left-right">
+            <div class="icon left-right" data-target="thirdColorPalette">
               <i class="fa-solid fa-arrows-left-right"></i>
             </div>
             <div class="icon clone"><i class="fa-solid fa-clone"></i></div>
@@ -783,13 +842,13 @@
 
         <div class="colorContainer fourthColorPalette">
           <div class="optionContainer">
-            <div class="icon x"><i class="fa-solid fa-x"></i></div>
+            <div class="icon deleteX"><i class="fa-solid fa-x"></i></div>
             <div class="icon circle-half">
               <i class="fa-solid fa-circle-half-stroke"></i>
             </div>
             <div class="icon bars"><i class="fa-solid fa-table-list"></i></div>
             <div class="icon heart"><i class="fa-regular fa-heart"></i></div>
-            <div class="icon left-right">
+            <div class="icon left-right" data-target="fourthColorPalette">
               <i class="fa-solid fa-arrows-left-right"></i>
             </div>
             <div class="icon clone"><i class="fa-solid fa-clone"></i></div>
@@ -808,13 +867,13 @@
 
         <div class="colorContainer fifthColorPalette">
           <div class="optionContainer">
-            <div class="icon x"><i class="fa-solid fa-x"></i></div>
+            <div class="icon deleteX"><i class="fa-solid fa-x"></i></div>
             <div class="icon circle-half">
               <i class="fa-solid fa-circle-half-stroke"></i>
             </div>
             <div class="icon bars"><i class="fa-solid fa-table-list"></i></div>
             <div class="icon heart"><i class="fa-regular fa-heart"></i></div>
-            <div class="icon left-right">
+            <div class="icon left-right" data-target="fifthColorPalette">
               <i class="fa-solid fa-arrows-left-right"></i>
             </div>
             <div class="icon clone"><i class="fa-solid fa-clone"></i></div>
@@ -828,6 +887,73 @@
           </div>
         </div>
       </div>
+      <!----------------SIDEBAR COLOR VOLUME----------->
+      <aside class="container-sidebar">
+        <div class="sidebar-color-volume-container">
+          <div class="title-sidebar-color-volume">
+            <h1>Regola palette</h1>
+          </div>
+          <div class="divider-sidebar-color-volume"></div>
+          <div class="option-sidebar-color-volume-container">
+            <div class="color-tone section-sidebar-volume">
+              <div class="number-volume">
+                <span>Tonalità</span>
+                <input type="text" placeholder="0" />
+              </div>
+              <input
+                type="range"
+                class="volume-range volume-rainbow"
+                min="0"
+                max="360"
+                value="180"
+              />
+            </div>
+            <div class="color-saturation section-sidebar-volume">
+              <div class="number-volume">
+                <span>Saturazione</span>
+                <input type="text" placeholder="0" />
+              </div>
+              <input
+                class="volume-range volume-saturation"
+                type="range"
+                name=""
+                id=""
+              />
+            </div>
+            <div class="color-brightness section-sidebar-volume">
+              <div class="number-volume">
+                <span>Luminosità</span>
+                <input type="text" placeholder="0" />
+              </div>
+              <input
+                class="volume-range volume-brightness"
+                type="range"
+                name=""
+                id=""
+              />
+            </div>
+            <div class="color-temperature section-sidebar-volume">
+              <div class="number-volume">
+                <span>Temperatura</span>
+                <input type="text" placeholder="0" />
+              </div>
+              <input
+                class="volume-range volume-temperature"
+                type="range"
+                name=""
+                id=""
+              />
+            </div>
+          </div>
+          <div class="divider-sidebar-color-volume"></div>
+          <div class="inpostation-null-save">
+            <div class="null-save">
+              <button class="button-white">Annulla</button>
+              <button class="button-blue">Applica</button>
+            </div>
+          </div>
+        </div>
+      </aside>
       <!--------------------------SIDEBAR LIBRARY MENU--------------------------->
       <aside class="library-menu-sidebar">
         <!--------------------------LIBRARY HEADER--------------------------->

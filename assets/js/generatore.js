@@ -6,3 +6,6 @@ import "../../components/navbar_principale/navbar_principale.js";
 import "../../components/palette_colori/palette_colori.js";
 import "../../components/secondaNavbar/secondaNavbar.js";
 import "../../components/tre-puntini/tre-puntini.js";
+import "../../components/modal-seleziona-immagine/modal-seleziona-immagine.js";
+import "../../components/sidebar_color_volume/sidebar_color_volume.js";
+
