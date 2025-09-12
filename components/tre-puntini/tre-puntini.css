@@ -1,0 +1,52 @@
+/* da eliminare */
+body {
+  background-color: aqua;
+}
+
+.general-three-dot-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  border-radius: 5px;
+}
+
+.container-of-the-container {
+  width: 15%;
+  gap: 10px;
+  display: flex;
+
+  flex-direction: column;
+  list-style: none;
+  background-color: white;
+  border-radius: 20px;
+}
+
+.list-of-entries {
+  display: flex;
+  gap: 10px;
+  width: 90%;
+  height: 15%;
+  margin-left: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.list-of-entries a {
+  text-decoration: none;
+  color: black;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+/* 
+.list-of-entries:hover {
+  width: 90%;
+  cursor: pointer;
+  background-color: rgb(224, 224, 224);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+}
+ */

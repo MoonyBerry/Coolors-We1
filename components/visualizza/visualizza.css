@@ -1,0 +1,145 @@
+.visualizza-modal-container.mostra,
+.overlayModalVisualizza.mostra {
+  opacity: 1;
+  visibility: visible;
+}
+
+.visualizza-modal-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 0.2s ease-in-out;
+}
+
+.global-container {
+  width: 468px;
+  gap: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 10px;
+  background-color: white;
+  position: relative;
+  z-index: 3;
+}
+.title-header {
+  width: 100%;
+  height: 46px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid grey;
+}
+/* Creazione menu tre puntini */
+.three-dots-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+  cursor: pointer;
+  height: 36px;
+  width: 36px;
+  margin-right: 10px;
+}
+.menu-dots-view {
+  width: 3px;
+  height: 3px;
+  background-color: black;
+  border-radius: 50%;
+}
+/**/
+
+.main-options {
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+  padding: 0 2rem;
+  width: 468px;
+  height: 368px;
+  border-bottom: 1px solid grey;
+  overflow-y: scroll;
+}
+.main-options p {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  letter-spacing: 0.04em;
+  line-height: 40px;
+}
+
+/*Griglia colore*/
+.color-selection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 85%;
+  height: 86px;
+}
+.cage-container {
+  width: 100%;
+  height: 46px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.color-cage {
+  display: flex;
+  width: 20%;
+  height: 46px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  flex-direction: row;
+}
+.first {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.last {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+p:hover {
+  width: 100%;
+
+  background-color: rgb(235, 234, 234);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+
+  cursor: pointer;
+}
+
+.fa-solid {
+  padding: 10px;
+  margin-left: 10px;
+}
+.fa-solid:hover {
+  cursor: pointer;
+  background-color: rgb(235, 234, 234);
+  border-radius: 10px;
+}
+.three-dots-menu:hover {
+  cursor: pointer;
+  background-color: rgb(235, 234, 234);
+  border-radius: 10px;
+}
+
+.overlayModalVisualizza {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Sfondo nero con opacità al 50% */
+  z-index: 2; /* Un valore basso */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out;
+}

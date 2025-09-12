@@ -76,3 +76,59 @@ function changingColorPalette(e) {
     });
   }
 }
+
+/// OPENING/CLOSING VISUALIZZA MODAL
+const $openVisualizza = document.querySelector(".open-visualizza");
+const $closeVisualizza = document.querySelector(".fa-solid.fa-xmark");
+const $modalVisualizza = document.querySelector(".visualizza-modal-container");
+const $overlayVisualizza = document.querySelector(".overlayModalVisualizza");
+
+$openVisualizza.addEventListener("click", () => {
+  $modalVisualizza.classList.add("mostra");
+  $overlayVisualizza.classList.add("mostra");
+});
+
+$closeVisualizza.addEventListener("click", () => {
+  $modalVisualizza.classList.remove("mostra");
+  $overlayVisualizza.classList.remove("mostra");
+});
+
+/////////////////////////////////////////////////////////7
+
+class Palette {
+  constructor(baseColor) {
+    this.baseColor = baseColor; // es: "#3498db"
+    this.colors = this.generatePalette();
+  }
+
+  // Metodo per convertire HEX → RGB
+  hexToRgb(hex) {
+    const cleanHex = hex.replace("#", "");
+    const bigint = parseInt(cleanHex, 16);
+    return {
+      r: (bigint >> 16) & 255,
+      g: (bigint >> 8) & 255,
+      b: bigint & 255,
+    };
+  }
+
+  // Metodo per schiarire/scurire un colore
+  adjustBrightness(hex, factor) {
+    const { r, g, b } = this.hexToRgb(hex);
+    const nr = Math.min(255, Math.max(0, r + factor));
+    const ng = Math.min(255, Math.max(0, g + factor));
+    const nb = Math.min(255, Math.max(0, b + factor));
+    return this.rgbToHex(nr, ng, nb);
+  }
+
+  // Genera una palette con variazioni di luminosità
+  generatePalette() {
+    return [
+      this.adjustBrightness(this.baseColor, -60),
+      this.adjustBrightness(this.baseColor, -30),
+      this.baseColor,
+      this.adjustBrightness(this.baseColor, 30),
+      this.adjustBrightness(this.baseColor, 60),
+    ];
+  }
+}
