@@ -137,7 +137,6 @@ div.pro-privilege-description::-webkit-scrollbar {
 /*GO PRO BUTTON*/
 div.btn-pro-container {
   position: sticky;
-  bottom: 0;
   left: 0;
   width: 100%;
   height: 76px;
