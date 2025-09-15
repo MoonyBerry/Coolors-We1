@@ -1,3 +1,16 @@
+.daltonico.sideIsOpen {
+  min-width: 300px;
+  opacity: 1;
+}
+
+.daltonico {
+  width: 0;
+  min-width: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: min-width 0.3s cubic-bezier(0.6, 0.4, 0, 1),
+    opacity 0.2s ease-in-out;
+}
 .general-sidebar-daltonico {
   display: flex;
   flex-direction: column;
