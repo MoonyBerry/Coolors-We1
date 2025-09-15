@@ -8,3 +8,4 @@ import "../../components/secondaNavbar/secondaNavbar.js";
 import "../../components/modal-seleziona-immagine/modal-seleziona-immagine.js";
 import "../../components/sidebar_color_volume/sidebar_color_volume.js";
 import "../../components/daltonismo-sidebar/daltonismo.js";
+import "../../components/registrazioni-modal/modal_registrazioni.js";
