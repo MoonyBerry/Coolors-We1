@@ -46,34 +46,48 @@ $body.addEventListener("keydown", changingColorPalette);
 $generatorButton.addEventListener("click", changingColorPalette);
 
 function changingColorPalette(e) {
-  console.log(e.code);
   if ((e.type === "keydown" && e.code === "Space") || e.type === "click") {
-    $divBackground.forEach((background) => {
-      let hexCode = "#";
+    const $proModal = document.querySelector("div.pro-modal-container");
+    const $proModalOverlay = document.querySelector("div.pro-modal-overlay");
+    const $closeProModal = document.querySelector("div.close-pro-modal");
+    const $paletteContainerSize =
+      document.querySelectorAll("div.colorContainer");
+    //OPEN PRO MODAL IF MORE THAN 5 COLORS
+    if ($paletteContainerSize.length > 5) {
+      $proModal.classList.add("show");
+      $proModalOverlay.classList.add("show");
+      $closeProModal.addEventListener("click", () => {
+        $proModal.classList.remove("show");
+        $proModalOverlay.classList.remove("show");
+      });
+    } else {
+      $divBackground.forEach((background) => {
+        let hexCode = "#";
 
-      //GENERATING RANDOM HEXCODE
-      for (let i = 0; i < 6; i++) {
-        let randomNumber = Math.floor(Math.random() * 10); //0-9
-        let randomLetter = String.fromCharCode(
-          97 + Math.floor(Math.random() * 6) //A-F
-        ).toUpperCase();
-        let character = Math.random() < 0.5 ? randomNumber : randomLetter;
-        hexCode += character;
-      }
+        //GENERATING RANDOM HEXCODE
+        for (let i = 0; i < 6; i++) {
+          let randomNumber = Math.floor(Math.random() * 10); //0-9
+          let randomLetter = String.fromCharCode(
+            97 + Math.floor(Math.random() * 6) //A-F
+          ).toUpperCase();
+          let character = Math.random() < 0.5 ? randomNumber : randomLetter;
+          hexCode += character;
+        }
 
-      //CHANGING BACKGROUNDCOLOR
-      background.style.background = hexCode;
-      const $colorHexCode = background.querySelector("div.description h1");
-      const $nameColor = background.querySelector("div.description p");
+        //CHANGING BACKGROUNDCOLOR
+        background.style.background = hexCode;
+        const $colorHexCode = background.querySelector("div.description h1");
+        const $nameColor = background.querySelector("div.description p");
 
-      //CHANGING TITLE WITH COLOR HEXCODE
-      $colorHexCode.innerHTML = hexCode.slice(1);
+        //CHANGING TITLE WITH COLOR HEXCODE
+        $colorHexCode.innerHTML = hexCode.slice(1);
 
-      //CHANGING DESCRIPTION WITH COLORNAME
-      $nameColor.innerHTML =
-        color2name.closest(hexCode).name[0].toUpperCase() +
-        color2name.closest(hexCode).name.slice(1);
-    });
+        //CHANGING DESCRIPTION WITH COLORNAME
+        $nameColor.innerHTML =
+          color2name.closest(hexCode).name[0].toUpperCase() +
+          color2name.closest(hexCode).name.slice(1);
+      });
+    }
   }
 }
 

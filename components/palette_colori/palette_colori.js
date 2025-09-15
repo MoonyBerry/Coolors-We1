@@ -582,23 +582,38 @@ addDragAndButtonListeners();
 // Spacebar cambia colore anche per nuovi elementi
 document.addEventListener("keydown", function (e) {
   if (e.code === "Space") {
-    document.querySelectorAll(".colorContainer").forEach((div) => {
-      // Cambia colore random
-      const randomColor =
-        "#" +
-        Math.floor(Math.random() * 16777215)
-          .toString(16)
-          .padStart(6, "0")
-          .toUpperCase();
-      div.style.backgroundColor = randomColor;
-      const h1 = div.querySelector(".description h1");
-      if (h1) h1.textContent = randomColor.slice(1);
-      const p = div.querySelector(".description p");
-      if (p) {
-        const colorName = color2name.closest(randomColor).name;
-        p.textContent = colorName[0].toUpperCase() + colorName.slice(1);
-      }
-    });
+    //OPEN PRO MODAL
+    const $proModal = document.querySelector("div.pro-modal-container");
+    const $proModalOverlay = document.querySelector("div.pro-modal-overlay");
+    const $closeProModal = document.querySelector("div.close-pro-modal");
+    const $paletteContainerSize =
+      document.querySelectorAll("div.colorContainer");
+    if ($paletteContainerSize.length > 5) {
+      $proModal.classList.add("show");
+      $proModalOverlay.classList.add("show");
+      $closeProModal.addEventListener("click", () => {
+        $proModal.classList.remove("show");
+        $proModalOverlay.classList.remove("show");
+      });
+    } else {
+      document.querySelectorAll(".colorContainer").forEach((div) => {
+        // Cambia colore random
+        const randomColor =
+          "#" +
+          Math.floor(Math.random() * 16777215)
+            .toString(16)
+            .padStart(6, "0")
+            .toUpperCase();
+        div.style.backgroundColor = randomColor;
+        const h1 = div.querySelector(".description h1");
+        if (h1) h1.textContent = randomColor.slice(1);
+        const p = div.querySelector(".description p");
+        if (p) {
+          const colorName = color2name.closest(randomColor).name;
+          p.textContent = colorName[0].toUpperCase() + colorName.slice(1);
+        }
+      });
+    }
   }
 });
 
