@@ -9,12 +9,12 @@ body {
 .overlay-modal-inscrizione.is-visible {
   display: flex;
 }
-.overlay {
-  display: block;
+.overlay-modal-inscrizione {
+  display: none;
 }
 .container-modal-registrazione {
   position: fixed;
-  display: flex;
+  display: none;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -78,10 +78,14 @@ body {
 }
 .btnX {
   position: absolute;
-  left: 18px;
-  top: 18px;
+  padding: 10px;
+  border-radius: 10px;
+  left: 14px;
+  top: 6px;
 }
-
+.btnX:hover {
+  background: #f2f2f3;
+}
 .container-modal-registrazione > h1 {
   font-size: 35px;
   margin: 0;
