@@ -52,6 +52,7 @@ function changingColorPalette(e) {
     const $closeProModal = document.querySelector("div.close-pro-modal");
     const $paletteContainerSize =
       document.querySelectorAll("div.colorContainer");
+    const optionContainer = document.querySelectorAll(".optionContainer");
     //OPEN PRO MODAL IF MORE THAN 5 COLORS
     if ($paletteContainerSize.length > 5) {
       $proModal.classList.add("show");
@@ -66,6 +67,11 @@ function changingColorPalette(e) {
 
         //GENERATING RANDOM HEXCODE
         for (let i = 0; i < 6; i++) {
+          //////
+          if (optionContainer.classList.contain("lockVisible")) {
+            return false;
+          }
+          ///////////
           let randomNumber = Math.floor(Math.random() * 10); //0-9
           let randomLetter = String.fromCharCode(
             97 + Math.floor(Math.random() * 6) //A-F
@@ -75,6 +81,7 @@ function changingColorPalette(e) {
         }
 
         //CHANGING BACKGROUNDCOLOR
+
         background.style.background = hexCode;
         const $colorHexCode = background.querySelector("div.description h1");
         const $nameColor = background.querySelector("div.description p");
