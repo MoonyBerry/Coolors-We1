@@ -1,0 +1,26 @@
+.generator-color-content.on {
+  display: flex;
+}
+
+.generator-color-content {
+  height: 93%;
+  width: 100%;
+
+  justify-content: center;
+  align-items: center;
+  background: white;
+  position: absolute;
+  overflow: hidden;
+  background-color: brown;
+  top: 0;
+  flex-direction: column;
+  display: none;
+}
+.palette-shades {
+  height: 4%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}

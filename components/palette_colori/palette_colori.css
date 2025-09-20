@@ -1,3 +1,31 @@
+/* HEX label visibile solo su hover */
+.palette-shades {
+  position: relative;
+}
+.palette-shades:hover::after {
+  content: attr(data-hex);
+  opacity: 1;
+  color: #222;
+  font-size: 18px;
+  font-family: monospace;
+  font-weight: 900;
+  letter-spacing: 1px;
+
+  padding: 2px 6px;
+  border-radius: 6px;
+  pointer-events: none;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  transition: opacity 0.2s;
+}
+.palette-shades::after {
+  content: "";
+  opacity: 0;
+  pointer-events: none;
+}
 .palette-container.sideIsOpen {
   width: calc(100% - 300px);
   transition: width 0.3s cubic-bezier(0.6, 0.4, 0, 1), opacity 0.2s ease-in-out;
