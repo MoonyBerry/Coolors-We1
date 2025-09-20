@@ -1,12 +1,23 @@
 html,
 body {
   font-family: "Inter", sans-serif;
-  background-color: aqua;
 }
 
-.container-modal-registrazione {
-  position: relative;
+.container-modal-registrazione.is-visible {
   display: flex;
+}
+.overlay-modal-inscrizione.is-visible {
+  display: flex;
+}
+.overlay-modal-inscrizione {
+  display: none;
+}
+.container-modal-registrazione {
+  position: fixed;
+  display: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   align-items: center;
   justify-content: start;
   background: #ffffff;
@@ -19,13 +30,6 @@ body {
   z-index: 50;
   text-align: center;
 }
-.overlay-modal {
-  height: 100vh;
-  background: rgba(72, 72, 72, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
 .modal-suscribe-google > .fa-google {
   width: 10%;
@@ -34,6 +38,10 @@ body {
 }
 .modal-suscribe-google > span {
   width: 90%;
+}
+.modal-suscribe-google:hover,
+.modal-suscribe-apple:hover {
+  background: #ededee;
 }
 .modal-suscribe-apple > .fa-apple {
   width: 10%;
@@ -65,14 +73,24 @@ body {
   width: 332px;
   height: 46px;
 }
-
+.modal-suscribe-email:hover {
+  background: #005ce6;
+}
 .btnX {
   position: absolute;
-  left: 18px;
-  top: 18px;
+  padding: 10px;
+  border-radius: 10px;
+  left: 14px;
+  top: 6px;
 }
-
+.btnX:hover {
+  background: #f2f2f3;
+}
 .container-modal-registrazione > h1 {
   font-size: 35px;
   margin: 0;
+  font-weight: bolder;
+}
+.modalPrivacy strong {
+  font-weight: 700;
 }
