@@ -1,3 +1,7 @@
+import {
+  aggiornaTutteLeSfumature,
+  applicaSfumatureAlContainer,
+} from "./shade.js";
 const container = document.querySelector(".palette-container");
 
 container.addEventListener("click", (event) => {
@@ -551,7 +555,34 @@ function addColonna() {
   const hexCode = randomColor.slice(1);
   nuovaColonna.style.backgroundColor = randomColor;
   nuovaColonna.innerHTML += `
-        <div class="optionContainer">
+      <div class="generator-color-content">
+        <div class="palette-shades"></div>
+        <div class="palette-shades"></div>
+        <div class="palette-shades"></div>
+        <div class="palette-shades"></div>
+        <div class="palette-shades"></div>
+        <div class="palette-shades"></div>
+        <div class="palette-shades"></div>
+        <div class="palette-shades"></div>
+        <div class="palette-shades"></div>
+        <div class="palette-shades"></div>
+        <div class="palette-shades"></div>
+        <div class="palette-shades"></div>
+        <div class="palette-shades"></div>
+        <div class="palette-shades"></div>
+        <div class="palette-shades"></div>
+        <div class="palette-shades"></div>
+        <div class="palette-shades"></div>
+        <div class="palette-shades"></div>
+        <div class="palette-shades"></div>
+        <div class="palette-shades"></div>
+        <div class="palette-shades"></div>
+        <div class="palette-shades"></div>
+        <div class="palette-shades"></div>
+        <div class="palette-shades"></div>
+        <div class="palette-shades"></div>
+      </div> 
+  <div class="optionContainer">
           <div class="icon deleteX"><i class="fa-solid fa-x"></i></div>
           <div class="icon circle-half">
             <i class="fa-solid fa-circle-half-stroke"></i>
@@ -580,10 +611,17 @@ function addColonna() {
 
   colonna.parentNode.insertBefore(nuovaColonna, colonna.nextSibling);
   addDragAndButtonListeners();
+  // Applica le sfumature al nuovo colorContainer
+  applicaSfumatureAlContainer(nuovaColonna);
+  // Aggiungi listener per mostrare generator-color-content anche ai nuovi
+  import("./shade.js").then((mod) => mod.aggiungiListenerBars(nuovaColonna));
 }
 
 // Inizializza i listener all'avvio
+
 addDragAndButtonListeners();
+// Applica le sfumature a tutte le palette statiche all'avvio
+aggiornaTutteLeSfumature();
 
 // Spacebar cambia colore anche per nuovi elementi
 document.addEventListener("keydown", function (e) {
@@ -623,6 +661,8 @@ document.addEventListener("keydown", function (e) {
           const colorName = color2name.closest(randomColor).name;
           p.textContent = colorName[0].toUpperCase() + colorName.slice(1);
         }
+        // Aggiorna le sfumature per ogni colorContainer
+        applicaSfumatureAlContainer(div);
       });
     }
   }
