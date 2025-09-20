@@ -237,6 +237,7 @@ document.addEventListener("DOMContentLoaded", () => {
 //LIBRARY SIDEBAR MENU - SAVING FAVOURITE COLORS PALETTES
 //OPENING AND CLOSING SIDEBAR
 const $containerSidebar = document.querySelector(".container-sidebar");
+const $containerSidebarDaltonico = document.querySelector(".daltonico");
 const $librarySidebar = document.querySelector("aside.library-menu-sidebar");
 const $librarySidebarOpenButton = document.querySelector(
   "div.tendon-container"
@@ -254,6 +255,9 @@ $librarySidebarOpenButton.addEventListener("click", () => {
   });
   if ($containerSidebar.classList.contains("sideIsOpen")) {
     $containerSidebar.classList.remove("sideIsOpen");
+  }
+  if ($containerSidebarDaltonico.classList.contains("sideIsOpen")) {
+    $containerSidebarDaltonico.classList.remove("sideIsOpen");
   }
 });
 
