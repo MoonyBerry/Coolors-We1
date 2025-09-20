@@ -1,11 +1,23 @@
+.general-three-dot-container.active {
+  display: flex;
+}
+
 .general-three-dot-container {
-  width: 100%;
   display: flex;
   justify-content: center;
   border-radius: 5px;
+  position: absolute;
+  top: 46px;
   display: none;
+  z-index: 1;
 }
-
+.dots-menu-container-position {
+  display: flex;
+  gap: 3px;
+}
+.dots-menu-container {
+  position: relative;
+}
 .container-of-the-container {
   display: flex;
   width: 18rem;
@@ -22,6 +34,7 @@
   height: 11%;
   margin: 12px 0px 8px 12px;
   padding: 8px;
+  color: black;
 }
 
 .list-of-entries a {
