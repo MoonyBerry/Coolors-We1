@@ -69,6 +69,11 @@
   opacity: 0;
 }
 
+/* Rendi le icone sempre visibili in hover anche se il lucchetto è chiuso */
+.colorContainer:hover .optionContainer > div:not(.divOpen) {
+  opacity: 1 !important;
+}
+
 .icon {
   display: flex;
   justify-content: center;

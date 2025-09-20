@@ -25,10 +25,12 @@ container.addEventListener("click", (event) => {
     lock.classList.remove("fa-lock-open");
     lock.classList.add("fa-lock");
     optionContainer.classList.add("lockVisible");
+    colorContainer.classList.add("lockVisible");
   } else {
     lock.classList.remove("fa-lock");
     lock.classList.add("fa-lock-open");
     optionContainer.classList.remove("lockVisible");
+    colorContainer.classList.remove("lockVisible");
   }
 });
 
@@ -239,6 +241,7 @@ document.addEventListener("DOMContentLoaded", () => {
 //LIBRARY SIDEBAR MENU - SAVING FAVOURITE COLORS PALETTES
 //OPENING AND CLOSING SIDEBAR
 const $containerSidebar = document.querySelector(".container-sidebar");
+const $containerSidebarDaltonico = document.querySelector(".daltonico");
 const $librarySidebar = document.querySelector("aside.library-menu-sidebar");
 const $librarySidebarOpenButton = document.querySelector(
   "div.tendon-container"
@@ -256,6 +259,9 @@ $librarySidebarOpenButton.addEventListener("click", () => {
   });
   if ($containerSidebar.classList.contains("sideIsOpen")) {
     $containerSidebar.classList.remove("sideIsOpen");
+  }
+  if ($containerSidebarDaltonico.classList.contains("sideIsOpen")) {
+    $containerSidebarDaltonico.classList.remove("sideIsOpen");
   }
 });
 
@@ -454,7 +460,7 @@ $savePaletteButton.addEventListener("click", () => {
 
   $myPaletteNameInput.value = "";
 });
-//funzione drag and drop ancora da completare
+//funzione drag and drop
 ///////////////////////////////////////////////////////////////
 let dragSrc = null;
 
@@ -635,7 +641,12 @@ document.addEventListener("keydown", function (e) {
       });
     } else {
       document.querySelectorAll(".colorContainer").forEach((div) => {
-        // Cambia colore random
+        // Se la colonna è bloccata (lucchetto chiuso), salta
+        const lockIcon = div.querySelector(".lock");
+        if (lockIcon && lockIcon.classList.contains("fa-lock")) {
+          return; // saltare questa colonna
+        }
+        // Cambia colore random solo se non bloccata
         const randomColor =
           "#" +
           Math.floor(Math.random() * 16777215)
