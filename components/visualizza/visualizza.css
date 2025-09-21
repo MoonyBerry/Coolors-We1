@@ -33,7 +33,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid grey;
 }
 /* Creazione menu tre puntini */
 .three-dots-menu {
@@ -61,6 +60,7 @@
   padding: 0 2rem;
   width: 468px;
   height: 368px;
+  border-top: 1px solid grey;
   border-bottom: 1px solid grey;
   overflow-y: scroll;
 }
@@ -140,4 +140,64 @@
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease-in-out;
+}
+.visualizza-main-options .color-values-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 1.5rem 0;
+  gap: 0.5rem;
+}
+
+.visualizza-main-options .color-value-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+
+.visualizza-main-options .color-value-label {
+  min-width: 80px;
+  font-weight: bold;
+  margin-right: 1.5rem;
+  text-align: left;
+  color: #222;
+}
+
+.visualizza-main-options .color-value-data {
+  flex: 1;
+  text-align: left;
+  color: #222;
+  word-break: break-all;
+}
+.visualizza-main-options .color-values-list {
+  font-family: "Montserrat", "Inter", Arial, sans-serif;
+}
+
+.visualizza-main-options .color-value-label {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  color: #7a6e7a;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.visualizza-main-options .color-value-data {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: #222;
+  text-transform: none;
+  margin-top: 2px;
+}
+
+.visualizza-main-options .color-value-row {
+  display: flex;
+  flex-direction: column; /* Cambiato da row a column */
+  justify-content: flex-start;
+  align-items: flex-start; /* Allinea a sinistra */
+  width: 100%;
+  gap: 20px; /* Nessuno spazio verticale extra */
 }

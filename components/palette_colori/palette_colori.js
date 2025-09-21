@@ -1,7 +1,7 @@
 import {
   aggiornaTutteLeSfumature,
   applicaSfumatureAlContainer,
-} from "./shade.js";
+} from "../shades/shade.js";
 const container = document.querySelector(".palette-container");
 
 container.addEventListener("click", (event) => {
@@ -608,7 +608,9 @@ function addColonna() {
   // Applica le sfumature al nuovo colorContainer
   applicaSfumatureAlContainer(nuovaColonna);
   // Aggiungi listener per mostrare generator-color-content anche ai nuovi
-  import("./shade.js").then((mod) => mod.aggiungiListenerBars(nuovaColonna));
+  import("../shades/shade.js").then((mod) =>
+    mod.aggiungiListenerBars(nuovaColonna)
+  );
 }
 
 // Inizializza i listener all'avvio
