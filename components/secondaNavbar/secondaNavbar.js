@@ -62,13 +62,13 @@ function changingColorPalette(e) {
         $proModalOverlay.classList.remove("show");
       });
     } else {
-      $divBackground.forEach((background) => {
+      $divBackground.forEach((background, j) => {
         let hexCode = "#";
         //////
-        const hasLocked = Array.from(optionContainer).some(
-          (el) => el.classList.contains("lockVisible") // 👉 corretto "contain" → "contains"
-        );
-        if (hasLocked) {
+        if (
+          optionContainer[j] &&
+          optionContainer[j].classList.contains("lockVisible")
+        ) {
           return;
         }
         ///////////
