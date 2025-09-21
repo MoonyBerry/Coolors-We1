@@ -34,7 +34,13 @@
           <div class="color-tone section-sidebar-volume">
             <div class="number-volume">
               <span>Tonalità</span>
-              <input type="number" />
+              <input
+                type="number"
+                class="input-number"
+                data-action="tonalita"
+                min="-100"
+                max="100"
+              />
             </div>
             <input
               type="range"
@@ -42,42 +48,67 @@
               min="0"
               max="360"
               value="180"
+              data-action="tonalita"
             />
           </div>
           <div class="color-saturation section-sidebar-volume">
             <div class="number-volume">
               <span>Saturazione</span>
-              <input type="number" />
+              <input
+                type="number"
+                class="input-number"
+                data-action="saturazione"
+                min="-100"
+                max="100"
+              />
             </div>
             <input
               class="volume-range volume-saturation"
               type="range"
-              name=""
-              id=""
+              min="0"
+              max="200"
+              value="100"
+              data-action="saturazione"
             />
           </div>
           <div class="color-brightness section-sidebar-volume">
             <div class="number-volume">
               <span>Luminosità</span>
-              <input type="number" />
+              <input
+                type="number"
+                class="input-number"
+                data-action="luminosita"
+                min="-100"
+                max="100"
+              />
             </div>
             <input
               class="volume-range volume-brightness"
               type="range"
-              name=""
-              id=""
+              min="0"
+              max="200"
+              value="100"
+              data-action="luminosita"
             />
           </div>
           <div class="color-temperature section-sidebar-volume">
             <div class="number-volume">
               <span>Temperatura</span>
-              <input type="number" />
+              <input
+                type="number"
+                class="input-number"
+                data-action="temperatura"
+                min="-100"
+                max="100"
+              />
             </div>
             <input
               class="volume-range volume-temperature"
               type="range"
-              name=""
-              id=""
+              min="-100"
+              max="100"
+              value="0"
+              data-action="temperatura"
             />
           </div>
         </div>
