@@ -68,6 +68,10 @@
 .optionContainer.lockVisible > div:not(.divOpen) {
   opacity: 0;
 }
+/* Rendi le icone sempre visibili in hover anche se il lucchetto è chiuso */
+.colorContainer:hover .optionContainer > div:not(.divOpen) {
+  opacity: 1 !important;
+}
 
 /* Rendi le icone sempre visibili in hover anche se il lucchetto è chiuso */
 .colorContainer:hover .optionContainer > div:not(.divOpen) {

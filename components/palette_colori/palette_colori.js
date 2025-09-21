@@ -529,6 +529,7 @@ function drop(e) {
     parent.insertBefore(dragSrc, this);
     parent.insertBefore(this, srcNext);
     addDragAndButtonListeners(); // Riattacca i listener
+    sincronizzaColorCage(); // <--- AGGIUNGI QUESTA CHIAMATA
   }
 }
 
@@ -538,6 +539,7 @@ function deleteColonna() {
   if (colonne.length > 2 && colonna) {
     colonna.remove();
     addDragAndButtonListeners();
+    sincronizzaColorCage(); // <--- AGGIUNGI QUESTA CHIAMATA
   }
 }
 
@@ -556,6 +558,7 @@ function addColonna() {
   nuovaColonna.style.backgroundColor = randomColor;
   nuovaColonna.innerHTML += `
       <div class="generator-color-content">
+        <div class="palette-shades"></div>
         <div class="palette-shades"></div>
         <div class="palette-shades"></div>
         <div class="palette-shades"></div>
@@ -617,6 +620,7 @@ function addColonna() {
   import("../shades/shade.js").then((mod) =>
     mod.aggiungiListenerBars(nuovaColonna)
   );
+  sincronizzaColorCage(); // <--- AGGIUNGI QUESTA CHIAMATA
 }
 
 // Inizializza i listener all'avvio
@@ -625,7 +629,25 @@ addDragAndButtonListeners();
 // Applica le sfumature a tutte le palette statiche all'avvio
 aggiornaTutteLeSfumature();
 
-// Spacebar cambia colore anche per nuovi elementi
+// Funzione per sincronizzare i colori tra colorContainer e color-cage
+function sincronizzaColorCage() {
+  const colorContainers = document.querySelectorAll(".colorContainer");
+  const colorCages = document.querySelectorAll(".color-cage");
+  colorContainers.forEach((container, i) => {
+    const bgColor = getComputedStyle(container).backgroundColor;
+    if (colorCages[i]) {
+      colorCages[i].style.backgroundColor = bgColor;
+      // Se vuoi anche aggiornare il testo HEX dentro color-cage (se presente)
+      const h1 = colorCages[i].querySelector("h1");
+      if (h1) {
+        // Usa la funzione rgbToHex già presente nel file
+        h1.textContent = rgbToHex(bgColor).slice(1);
+      }
+    }
+  });
+}
+
+// Modifica la funzione che cambia i colori random (es: spacebar) per chiamare anche sincronizzaColorCage
 document.addEventListener("keydown", function (e) {
   if (e.code === "Space") {
     //OPEN PRO MODAL
@@ -643,6 +665,7 @@ document.addEventListener("keydown", function (e) {
       });
     } else {
       document.querySelectorAll(".colorContainer").forEach((div) => {
+        // Cambia colore random
         // Se la colonna è bloccata (lucchetto chiuso), salta
         const lockIcon = div.querySelector(".lock");
         if (lockIcon && lockIcon.classList.contains("fa-lock")) {
@@ -663,9 +686,9 @@ document.addEventListener("keydown", function (e) {
           const colorName = color2name.closest(randomColor).name;
           p.textContent = colorName[0].toUpperCase() + colorName.slice(1);
         }
-        // Aggiorna le sfumature per ogni colorContainer
         applicaSfumatureAlContainer(div);
       });
+      sincronizzaColorCage(); // <--- AGGIUNGI QUESTA CHIAMATA
     }
   }
 });
@@ -684,5 +707,3 @@ $btnsDelete.forEach(($btnDelete) => {
     }
   });
 });
-
-// ...existing code...
