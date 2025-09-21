@@ -7,20 +7,21 @@ const $librarySideBtn = document.querySelector(".tendon-container");
 const $tendonRotate = document.querySelectorAll(".tendon");
 const $libraryOverlayMobile = document.querySelector(".library-overlay-mobile");
 
-$btnGlassOpen.addEventListener("click", () => {
-  $containerSidebarDaltonico.classList.toggle("sideIsOpen");
-
-  if (
-    $library.classList.contains("show") ||
-    $containerSidebar.classList.contains("sideIsOpen")
-  ) {
-    $library.classList.remove("show");
-    $librarySideBtn.classList.remove("rotate");
-    $paletteContainer.classList.remove("sideIsOpen");
-    $libraryOverlayMobile.classList.remove("show");
-    $containerSidebar.classList.remove("sideIsOpen");
-    $tendonRotate.forEach(($tendon) => {
-      $tendon.classList.remove("rotate");
-    });
-  }
-});
+$btnGlassOpen &&
+  $btnGlassOpen.addEventListener("click", () => {
+    $containerSidebarDaltonico.classList.toggle("sideIsOpen");
+    if (
+      $containerSidebarDaltonico.classList.contains("sideIsOpen") &&
+      ($library.classList.contains("show") ||
+        $containerSidebar.classList.contains("sideIsOpen"))
+    ) {
+      $library.classList.remove("show");
+      $librarySideBtn.classList.remove("rotate");
+      $paletteContainer.classList.remove("sideIsOpen");
+      $libraryOverlayMobile.classList.remove("show");
+      $containerSidebar.classList.remove("sideIsOpen");
+      $tendonRotate.forEach(($tendon) => {
+        $tendon.classList.remove("rotate");
+      });
+    }
+  });

@@ -1,40 +1,39 @@
 .general-three-dot-container.active {
   display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .general-three-dot-container {
-  display: flex;
-  justify-content: center;
-  border-radius: 5px;
   position: absolute;
   top: 46px;
   display: none;
   z-index: 1;
-}
-.dots-menu-container-position {
-  display: flex;
-  gap: 3px;
-}
-.dots-menu-container {
-  position: relative;
-}
-.container-of-the-container {
-  display: flex;
-  width: 18rem;
-  flex-direction: column;
+  width: 230px;
+  height: 198px;
   list-style: none;
   background-color: white;
-  border-radius: 20px;
+  border-radius: 14px;
+  padding: 10px;
+}
+
+.general-three-dot-container ul {
+  width: 100%;
+  height: 100%;
 }
 
 .list-of-entries {
   display: flex;
+  flex-direction: row;
   gap: 10px;
-  width: 90%;
-  height: 11%;
-  margin: 12px 0px 8px 12px;
-  padding: 8px;
+  padding: 8px 12px;
+  margin: 2px 0;
   color: black;
+}
+
+.list-of-entries i {
+  font-size: 16px;
 }
 
 .list-of-entries a {
@@ -44,13 +43,12 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  font-size: 14px;
 }
 
 .list-of-entries:hover {
-  width: 90%;
+  width: 100%;
   cursor: pointer;
   background-color: rgb(241, 240, 240);
   border-radius: 5px;
-  display: flex;
-  align-items: center;
 }

@@ -55,8 +55,8 @@
           </div>
           <div class="account mobileMenu">
             <h1>ACCOUNT</h1>
-            <div>Accedi</div>
-            <div>Registrati</div>
+            <div class="btn-log-in-mobile">Accedi</div>
+            <div class="btn-register-mobile">Registrati</div>
             <div>Passa a Pro</div>
           </div>
         </nav>
@@ -165,40 +165,69 @@
 
         <div class="horizontal-navigation-bar">
           <div class="dots-menu-container">
-            <div class="dots-menu-container-position">
-              <div class="dots-menu"></div>
-              <div class="dots-menu"></div>
-              <div class="dots-menu"></div>
+            <div class="dots-menu"></div>
+            <div class="dots-menu"></div>
+            <div class="dots-menu"></div>
+                <!-------------MODAL 3 PUNTINI---------------->
+          <div class="general-three-dot-container">
+               <ul>
+                <li class="list-of-entries">
+                  <i class="fa-regular fa-clone"></i>
+                  <a href="#">Crea un collage</a>
+                </li>
+                <li class="list-of-entries">
+                  <i class="fa-solid fa-dharmachakra"></i>
+                  <a href="#">Metodo di generazione</a>
+                </li>
+                <li class="list-of-entries">
+                  <i class="fa-solid fa-gear"></i>
+                  <a href="#">Impostazioni</a>
+                </li>
+                <li class="list-of-entries">
+                  <i class="fa-regular fa-clock"></i>
+                  <a href="#">Cronologia palette</a>
+                </li>
+                <li class="list-of-entries">
+                  <i class="fa-regular fa-circle-question"></i>
+                  <a href="#">Guarda il tutorial</a>
+                </li>
+              </ul>
+          </div>
+          <!----------------------------->
+          </div>
+
+          <!--------------- MODAL INSCRIZIONE ----------------------->
+          <div class="overlay overlay-modal-inscrizione"></div>
+          <div class="container-modal-registrazione">
+            <div class="modal-registrazione-title">
+              <div class="btnX"><i class="fa-solid fa-x"></i></div>
+              <h1>Ciao!</h1>
+              <div class="registrazione-title-description">
+                Usa la tua email o un altro servizio per continuare con coolors.
+              </div>
             </div>
-            <!-------------MODAL 3 PUNTINI---------------->
-            <div class="general-three-dot-container">
-              <div class="container-of-the-container">
-                <ul>
-                  <li class="list-of-entries">
-                    <i class="fa-regular fa-clone"></i>
-                    <a href="#">Crea un collage</a>
-                  </li>
-                  <li class="list-of-entries">
-                    <i class="fa-solid fa-dharmachakra"></i>
-                    <a href="#">Metodo di generazione</a>
-                  </li>
-                  <li class="list-of-entries">
-                    <i class="fa-solid fa-gear"></i>
-                    <a href="#">Impostazioni</a>
-                  </li>
-                  <li class="list-of-entries">
-                    <i class="fa-regular fa-clock"></i>
-                    <a href="#">Cronologia palette</a>
-                  </li>
-                  <li class="list-of-entries">
-                    <i class="fa-regular fa-circle-question"></i>
-                    <a href="#">Guarda il tutorial</a>
-                  </li>
-                </ul>
+            <div class="modal-registrazione-body">
+              <div class="modal-suscribe-google">
+                <i class="fa-brands fa-google"></i>
+                <span>Continua con Google</span>
+              </div>
+              <div class="modal-suscribe-apple">
+                <i class="fa-brands fa-apple"></i>
+                <span>Continua con Apple</span>
+              </div>
+              <div class="modal-suscribe-email">
+                <span>Continua con email</span>
+              </div>
+              <div class="modalPrivacy">
+                Continuando, accetti i nostri
+                <span>Termini di servizio.</span>
+              </br>
+                Leggi la nostra <span>Informativa sulla privacy.</span>
               </div>
             </div>
           </div>
 
+      
           <span class="divider no-mobile"></span>
           <a class="hoverLink btn-modal-select-image-secondary-navbar" href="#"
             ><svg
@@ -1063,7 +1092,14 @@
             <div class="color-tone section-sidebar-volume">
               <div class="number-volume">
                 <span>Tonalità</span>
-                <input type="text" placeholder="0" />
+                <input
+                  type="number"
+                  class="input-number"
+                  data-action="tonalita"
+                  placeholder="100"
+                  min="-100"
+                  max="100"
+                />
               </div>
               <input
                 type="range"
@@ -1071,42 +1107,70 @@
                 min="0"
                 max="360"
                 value="180"
+                data-action="tonalita"
               />
             </div>
             <div class="color-saturation section-sidebar-volume">
               <div class="number-volume">
                 <span>Saturazione</span>
-                <input type="text" placeholder="0" />
+                <input
+                  type="number"
+                  class="input-number"
+                  data-action="saturazione"
+                  placeholder="100"
+                  min="-100"
+                  max="100"
+                />
               </div>
               <input
                 class="volume-range volume-saturation"
                 type="range"
-                name=""
-                id=""
+                min="0"
+                max="200"
+                value="100"
+                data-action="saturazione"
               />
             </div>
             <div class="color-brightness section-sidebar-volume">
               <div class="number-volume">
                 <span>Luminosità</span>
-                <input type="text" placeholder="0" />
+                <input
+                  type="number"
+                  class="input-number"
+                  data-action="luminosita"
+                  placeholder="100"
+                  min="-100"
+                  max="100"
+                />
               </div>
               <input
                 class="volume-range volume-brightness"
                 type="range"
-                name=""
-                id=""
+                min="0"
+                max="200"
+                value="100"
+                data-action="luminosita"
               />
             </div>
             <div class="color-temperature section-sidebar-volume">
               <div class="number-volume">
                 <span>Temperatura</span>
-                <input type="text" placeholder="0" />
+                <input
+                  type="number"
+                  class="input-number"
+                  data-action="temperatura"
+                  placeholder="100"
+                  min="-100"
+                  max="100"
+                />
               </div>
               <input
                 class="volume-range volume-temperature"
                 type="range"
-                name=""
-                id=""
+                min="-100"
+                max="100"
+                value="0"
+                data-action="temperatura"
               />
             </div>
           </div>
