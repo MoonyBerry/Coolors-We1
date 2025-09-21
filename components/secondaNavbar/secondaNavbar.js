@@ -64,14 +64,16 @@ function changingColorPalette(e) {
     } else {
       $divBackground.forEach((background) => {
         let hexCode = "#";
-
+        //////
+        const hasLocked = Array.from(optionContainer).some(
+          (el) => el.classList.contains("lockVisible") // 👉 corretto "contain" → "contains"
+        );
+        if (hasLocked) {
+          return;
+        }
+        ///////////
         //GENERATING RANDOM HEXCODE
         for (let i = 0; i < 6; i++) {
-          //////
-          if (optionContainer.classList.contain("lockVisible")) {
-            return false;
-          }
-          ///////////
           let randomNumber = Math.floor(Math.random() * 10); //0-9
           let randomLetter = String.fromCharCode(
             97 + Math.floor(Math.random() * 6) //A-F
