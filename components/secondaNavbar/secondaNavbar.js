@@ -62,16 +62,18 @@ function changingColorPalette(e) {
         $proModalOverlay.classList.remove("show");
       });
     } else {
-      $divBackground.forEach((background) => {
+      $divBackground.forEach((background, j) => {
         let hexCode = "#";
-
+        //////
+        if (
+          optionContainer[j] &&
+          optionContainer[j].classList.contains("lockVisible")
+        ) {
+          return;
+        }
+        ///////////
         //GENERATING RANDOM HEXCODE
         for (let i = 0; i < 6; i++) {
-          //////
-          if (optionContainer.classList.contain("lockVisible")) {
-            return false;
-          }
-          ///////////
           let randomNumber = Math.floor(Math.random() * 10); //0-9
           let randomLetter = String.fromCharCode(
             97 + Math.floor(Math.random() * 6) //A-F
