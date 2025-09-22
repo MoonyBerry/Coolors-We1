@@ -88,12 +88,25 @@ nav.wishlist-modal-section ul {
 
 nav.wishlist-modal-section li {
   padding: 0 10px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 nav.wishlist-modal-section a {
   text-decoration: none;
   color: #7d7c83;
   transition: color 0.1s ease-in-out;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+nav.wishlist-modal-section li:first-child a {
+  color: #0066ff;
+  border-bottom: 1px solid #0066ff;
 }
 
 nav.wishlist-modal-section a:hover {

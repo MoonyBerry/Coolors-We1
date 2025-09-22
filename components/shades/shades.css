@@ -3,9 +3,8 @@
 }
 
 .generator-color-content {
-  height: 93%;
+  height: calc(100% - 4%);
   width: 100%;
-
   justify-content: center;
   align-items: center;
   background: white;
@@ -23,4 +22,5 @@
   justify-content: center;
   align-items: center;
   position: relative;
+  cursor: pointer;
 }

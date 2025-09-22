@@ -1,6 +1,6 @@
 const $openBtn = document.querySelector(".navbar-functionality");
 const $closeBtn = document.querySelector(".fa-solid.fa-xmark");
-const $modal = document.querySelector(".global-container");
+const $modal = document.querySelector(".visualizza-global-container");
 
 // Palette di colori ben distinti
 const palette = ["#AFDCEB", "#CAE9F5", "#F0F8FF", "#ADD8E6", "#86C5D8"];
@@ -26,23 +26,23 @@ function showColorValuesDefault(hex) {
   visualizzaMainOptions.innerHTML = `
     <div class="color-values-list">
       <div class="color-value-row">
-        <span class="color-value-label">HEX:</span>
+        <span class="color-value-label">HEX</span>
         <span class="color-value-data">${hex.toUpperCase()}</span>
       </div>
       <div class="color-value-row">
-        <span class="color-value-label">HSB:</span>
+        <span class="color-value-label">HSB</span>
         <span class="color-value-data">${hsb.h}, ${hsb.s}%, ${hsb.b}%</span>
       </div>
       <div class="color-value-row">
-        <span class="color-value-label">HSL:</span>
+        <span class="color-value-label">HSL</span>
         <span class="color-value-data">${hsl.h}, ${hsl.s}%, ${hsl.l}%</span>
       </div>
       <div class="color-value-row">
-        <span class="color-value-label">RGB:</span>
+        <span class="color-value-label">RGB</span>
         <span class="color-value-data">${rgb.r}, ${rgb.g}, ${rgb.b}</span>
       </div>
       <div class="color-value-row">
-        <span class="color-value-label">CMYK:</span>
+        <span class="color-value-label">CMYK</span>
         <span class="color-value-data">${cmyk.c}%, ${cmyk.m}%, ${cmyk.y}%, ${
     cmyk.k
   }%</span>

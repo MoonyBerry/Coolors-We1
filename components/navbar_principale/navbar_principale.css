@@ -152,6 +152,18 @@ h1 {
   border-radius: 8px;
   width: 90%;
   height: 20%;
+  cursor: pointer;
+}
+
+.iconNavMain a {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  transition: 0.5s;
+  border-radius: 8px;
+  width: 90%;
+  height: 20%;
+  cursor: pointer;
 }
 
 .generatorNavMain:hover {
@@ -211,6 +223,7 @@ h1 {
 .app {
   color: #000000;
   pointer-events: none;
+  font-weight: 700;
 }
 .navText > span {
   pointer-events: none;
