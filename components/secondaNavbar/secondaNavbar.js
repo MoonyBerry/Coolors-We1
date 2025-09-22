@@ -20,6 +20,15 @@ const $openWishlist = document.querySelector("a.openWishlist");
 const $wishlistOverlay = document.querySelector("div.wishlist-modal-overlay");
 const $closeWishlist = document.querySelector("div.close-wishlist-modal");
 
+const $wishlistInputs = $wishlistModal.querySelectorAll("input, textarea");
+$wishlistInputs.forEach((input) => {
+  input.addEventListener("keydown", (e) => {
+    if (e.code === "Space") {
+      e.stopPropagation(); // blocca la propagazione verso il body
+    }
+  });
+});
+
 $openWishlist.addEventListener("click", () => {
   $wishlistModal.classList.add("show");
   $wishlistOverlay.classList.add("show");
